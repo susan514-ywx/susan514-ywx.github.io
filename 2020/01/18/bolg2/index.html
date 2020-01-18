@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">764</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">755</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,11 +403,10 @@ height:50vh;
 </li>
 </ul>
 <blockquote>
-<p>棋盘上A点有一个过河卒，需要走到目标B点。卒行走的规则：可以向下、或者向右。同时在棋盘上的某一点有一个对方的马（如C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点，如图3-1中的C点和P1，……，P8，卒不能通过对方马的控制点。棋盘用坐标表示，A点(0,0)、B点(n, m) (n,m为不超过20的整数),同样马的位置坐标是需要给出的，C≠A且C≠B。现在要求你计算出卒从A点能够到达B点的路径的条数。<br>![Alt text](./批注 2020-01-18 161401.jpg)</p>
+<p>棋盘上A点有一个过河卒，需要走到目标B点。卒行走的规则：可以向下、或者向右。同时在棋盘上的某一点有一个对方的马（如C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点，如图3-1中的C点和P1，……，P8，卒不能通过对方马的控制点。棋盘用坐标表示，A点(0,0)、B点(n, m) (n,m为不超过20的整数),同样马的位置坐标是需要给出的，C≠A且C≠B。现在要求你计算出卒从A点能够到达B点的路径的条数。</p>
 </blockquote>
-<blockquote>
+
 <p>【输入】<br>给出n、m和C点的坐标。<br>【输出】<br>从A点能够到达B点的路径的条数。<br>【输入样例】<br>8 6 0 4<br>【输出样例】<br>1617</p>
-</blockquote>
 <pre><code>#include&lt;stdio.h&gt;
     int main()
     {
@@ -446,7 +445,7 @@ for(i=1;i&lt;=n;i++)
 printf(&quot;%lld&quot;,step[n][m]);     
 }</code></pre><p>全局变量，全局数组默认值为0，局部为随机值</p>
 <hr>
-<p>#####递推与递归的区别<br>相对于递归算法,递推算法免除了数据进出栈的过程，也就是说,不需要函数不断的向边界值靠拢,而直接从边界出发,直到求出函数值</p>
+<h5 id="递推与递归的区别"><a href="#递推与递归的区别" class="headerlink" title="递推与递归的区别"></a>递推与递归的区别</h5><p>相对于递归算法,递推算法免除了数据进出栈的过程，也就是说,不需要函数不断的向边界值靠拢,而直接从边界出发,直到求出函数值</p>
 <p>比如阶乘函数：f(n)=n<em>f(n-1)<br>在f(3)的运算过程中,<br>递归的数据流动过程如下:<br>f(3){f(i)=f(i-1)</em>i}–&gt;f(2)–&gt;f(1)–&gt;f(0){f(0)=1}–&gt;f(1)–&gt;f(2)–f(3){f(3)=6}<br>而递推如下:<br>f(0)–&gt;f(1)–&gt;f(2)–&gt;f(3)<br>由此可见,递推的效率要高一些,在可能的情况下应尽量使用递推.但是递归作为比较基础的算法,它的作用不能忽视.所以,在把握这两种算法的时候应该特别注意。</p>
 
     </article>
@@ -455,7 +454,7 @@ printf(&quot;%lld&quot;,step[n][m]);
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 4:19:11 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 4:24:57 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 5:23:13 pm</a>
             
         </div>
     
@@ -582,7 +581,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#过河卒"><span class="toc-number">1.</span> <span class="toc-text">过河卒</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#过河卒"><span class="toc-number">1.</span> <span class="toc-text">过河卒</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#递推与递归的区别"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">递推与递归的区别</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
