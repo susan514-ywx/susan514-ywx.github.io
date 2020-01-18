@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">755</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">760</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,43 +407,8 @@ height:50vh;
 </blockquote>
 
 <p>【输入】<br>给出n、m和C点的坐标。<br>【输出】<br>从A点能够到达B点的路径的条数。<br>【输入样例】<br>8 6 0 4<br>【输出样例】<br>1617</p>
-<pre><code>#include&lt;stdio.h&gt;
-    int main()
-    {
-int n,m,x,y;
-//马有9个控制点 
-int a[9]={0,-2,-2,-1,-1,1,1,2,2};//控制行坐标
-int b[9]={0,1,-1,2,-2,2,-2,1,-1};//控制纵坐标
-int map[21][21];
-long long step[21][21]={0};//step[i][j]表示到(i,J)点的控制数 
-int i,j;
-scanf(&quot;%d%d%d%d&quot;,&amp;n,&amp;m,&amp;x,&amp;y);
-for(i=0;i&lt;21;i++)
-    for(j=0;j&lt;21;j++)
-        map[i][j]=1;//标记地图，1表可走 
-for(i=0;i&lt;9;i++)
-    if(x+a[i]&gt;=0&amp;&amp;x+a[i]&lt;=n&amp;&amp;y+b[i]&gt;=0&amp;&amp;y+b[i]&lt;=m)
-        map[x+a[i]][y+b[i]]=0;//标记马的控制点，0表不可走
-//第一行的控制数 
-for(i=0;i&lt;21;i++)
-    if(map[0][i])
-        step[0][i]=1;
-    else
-        break;//遇到马的控制点，停止遍历 
-
-//第一列控制数 
-for(i=0;i&lt;21;i++)
-    if(map[i][0])
-        step[i][0]=1;
-    else
-        break;
-//从（1，1）点开始，用递推法，求点（i，j)的控制数
-for(i=1;i&lt;=n;i++)
-    for(j=1;j&lt;=m;j++)
-    step[i][j]=step[i-1][j]*map[i-1][j]+step[i][j-1]*map[i][j-1];//递推公式，如果map为0则该步不可走
-
-printf(&quot;%lld&quot;,step[n][m]);     
-}</code></pre><p>全局变量，全局数组默认值为0，局部为随机值</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs C">   <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br>	<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br>	</span>&#123;<br><span class="hljs-keyword">int</span> n,m,x,y;<br><span class="hljs-comment">//马有9个控制点 </span><br><span class="hljs-keyword">int</span> a[<span class="hljs-number">9</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>&#125;;<span class="hljs-comment">//控制行坐标</span><br><span class="hljs-keyword">int</span> b[<span class="hljs-number">9</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">-1</span>&#125;;<span class="hljs-comment">//控制纵坐标</span><br><span class="hljs-keyword">int</span> <span class="hljs-built_in">map</span>[<span class="hljs-number">21</span>][<span class="hljs-number">21</span>];<br><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-built_in">step</span>[<span class="hljs-number">21</span>][<span class="hljs-number">21</span>]=&#123;<span class="hljs-number">0</span>&#125;;<span class="hljs-comment">//step[i][j]表示到(i,J)点的控制数 </span><br><span class="hljs-keyword">int</span> i,j;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d%d%d"</span>,&amp;n,&amp;m,&amp;x,&amp;y);<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">21</span>;i++)<br>	<span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">21</span>;j++)<br>		<span class="hljs-built_in">map</span>[i][j]=<span class="hljs-number">1</span>;<span class="hljs-comment">//标记地图，1表可走 </span><br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">9</span>;i++)<br>	<span class="hljs-keyword">if</span>(x+a[i]&gt;=<span class="hljs-number">0</span>&amp;&amp;x+a[i]&lt;=n&amp;&amp;y+b[i]&gt;=<span class="hljs-number">0</span>&amp;&amp;y+b[i]&lt;=m)<br>		<span class="hljs-built_in">map</span>[x+a[i]][y+b[i]]=<span class="hljs-number">0</span>;<span class="hljs-comment">//标记马的控制点，0表不可走</span><br><span class="hljs-comment">//第一行的控制数 </span><br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">21</span>;i++)<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">map</span>[<span class="hljs-number">0</span>][i])<br>		<span class="hljs-built_in">step</span>[<span class="hljs-number">0</span>][i]=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-keyword">break</span>;<span class="hljs-comment">//遇到马的控制点，停止遍历 </span><br><br><span class="hljs-comment">//第一列控制数 </span><br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">21</span>;i++)<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">map</span>[i][<span class="hljs-number">0</span>])<br>		<span class="hljs-built_in">step</span>[i][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-keyword">break</span>;<br><span class="hljs-comment">//从（1，1）点开始，用递推法，求点（i，j)的控制数</span><br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>	<span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=m;j++)<br>	<span class="hljs-built_in">step</span>[i][j]=<span class="hljs-built_in">step</span>[i<span class="hljs-number">-1</span>][j]*<span class="hljs-built_in">map</span>[i<span class="hljs-number">-1</span>][j]+<span class="hljs-built_in">step</span>[i][j<span class="hljs-number">-1</span>]*<span class="hljs-built_in">map</span>[i][j<span class="hljs-number">-1</span>];<span class="hljs-comment">//递推公式，如果map为0则该步不可走</span><br>	<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld"</span>,<span class="hljs-built_in">step</span>[n][m]); 	<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>全局变量，全局数组默认值为0，局部为随机值</p>
 <hr>
 <h5 id="递推与递归的区别"><a href="#递推与递归的区别" class="headerlink" title="递推与递归的区别"></a>递推与递归的区别</h5><p>相对于递归算法,递推算法免除了数据进出栈的过程，也就是说,不需要函数不断的向边界值靠拢,而直接从边界出发,直到求出函数值</p>
 <p>比如阶乘函数：f(n)=n<em>f(n-1)<br>在f(3)的运算过程中,<br>递归的数据流动过程如下:<br>f(3){f(i)=f(i-1)</em>i}–&gt;f(2)–&gt;f(1)–&gt;f(0){f(0)=1}–&gt;f(1)–&gt;f(2)–f(3){f(3)=6}<br>而递推如下:<br>f(0)–&gt;f(1)–&gt;f(2)–&gt;f(3)<br>由此可见,递推的效率要高一些,在可能的情况下应尽量使用递推.但是递归作为比较基础的算法,它的作用不能忽视.所以,在把握这两种算法的时候应该特别注意。</p>
@@ -454,7 +419,7 @@ printf(&quot;%lld&quot;,step[n][m]);
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 4:19:11 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 5:23:13 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 7:01:13 pm</a>
             
         </div>
     
