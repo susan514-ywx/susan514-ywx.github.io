@@ -198,6 +198,8 @@
     
     <!-- 谷歌统计  -->
     
+    <!--prettify代码高亮主题css引入-->
+<link href="/plugins/prettify/prettify.css" rel="stylesheet">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
@@ -411,10 +413,9 @@ height:50vh;
         </a>
         <div class="abstract-content">
             Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Hello HexoQuick StartCreate a new post1$ hexo new "My New Post"
-
+Hello HexoQuick StartCreate a new post$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo ...
+Run server...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -592,6 +593,14 @@ Run server1$ hexo ...
     
     </div>
     
+    <!--prettify代码高亮脚本引入-->
+<script src="/plugins/prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+ prettyPrint();
+})
+</script>
    
 </footer>
 
