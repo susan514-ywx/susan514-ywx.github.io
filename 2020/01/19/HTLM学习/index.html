@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>fi3ework&#39;s Studio</title>
+    <title>HTML · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -205,12 +205,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >fi3ework&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">HTML</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>fi3ework's Studio.</a>
 </header>
@@ -222,24 +233,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            HTML
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">664</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/01/19</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -340,105 +395,108 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/" >
-            
-                <span>HTML</span>
-        </a>
-        <div class="abstract-content">
-            基础
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><p>1.HTML标题通过&lt; h1 &gt;-&lt; h6 &gt;等标签进行定义的 。</p>
+<ol>
+<li>HTML段落是通过&lt; p &gt;标签进行定义的。</li>
+<li>HTML链接通过&lt; a &gt;标签定义。<br>实例:<br>&lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><br> href=hypertext reference<br>4.HTML图像通过<img>标签进行定义。<br> 实例：<br>&lt; img src=”批注 2020-01-18 161401.jpg”     width=”104” height=”142”/&gt;</li>
+</ol>
+<hr>
+<p>HTML文档是由HTLM元素定义的</p>
+<hr>
+<p>##HTML元素<br>HTML元素是从开始标签（star tag/opening tag)到结束标签(end tag/closing tag)的所有代码。</p>
+<h3 id="嵌套的HTML元素"><a href="#嵌套的HTML元素" class="headerlink" title="嵌套的HTML元素"></a>嵌套的HTML元素</h3><p>大多数HTML元素可以嵌套<br>HTML文档由嵌套的HTML元素构成。<br>###空的HTML的元素<br>没有内容的HTML元素为空元素。空元素是在开始标签中关闭的。<br>&lt; br&gt;(定义换行）就是没有关闭标签的空元素。<br>但在XHTML,XML,及未来版本中的HTML中，所有元素必须关闭。<br>采用在开始标签中加斜杠/。即:&lt; br/&gt;<br>###HTML提示：使用小标签<br>在未来（X)HTML强制使用小写。<br>##HTML属性</p>
+<hr>
+<p>属性为HTML元素提供附加信息。</p>
+<hr>
+<p>###属性实例：<br> 1.HTML链接<br>&lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><br>2.&lt; h1&gt;定义标题的开始<br>&lt; h1 align=”center”&gt;拥有对齐方式的附加信息<br>3.<body>d定义HTLM文档的主体</p>
+<body bycolor="yellow">拥有关于背景颜色的附加信息。
+4.< table>定义HTLM表格
+<table border="1">拥有关于表格边框的附加信息。
+###始终为属性值加引号
+双引号是最常用的，在某些情况下，可使用单引号
+例如：
+name='Bill"hello world"'
+###HTLM提示：
+1.使用小写属性
+2.属性总是在HTLM元素的开始标签中规定
+3.属性总是以名称——值对的形式出现。
+##HTLM标题
+***
+在HTML文档中，标题很重要，
+***
+##HTML标题
+通过< h1>-< h6>递减定义标题
+注释：浏览器会自动地在标题前后添加空格
+###HTML水平线
+< hr/>标签在HTLM页面中创建水平线
+###HTML注释
+实例：
+<！--注释内容-->
+##HTML段落
+###HTML折行
+在不产生新段落的情况下进行换行（新行），使用< br/>,虽然< br>与< br/>很相似，但在XHTLM，XML及未来的HTLM版本中只可使用<br/>。
+###HTML输出-有用的提示
+所有连续的空格或空行都会算作一个空格，HTML代码中的所有连续的空行（换行)也被显示为一个空格。
+##HTML样式
+***
+style属性的作用：
+提供了一种改变HTML元素的通用方法。
+***
+###实例
+1.背景颜色
+< html>
+< body style="background-color:yellow">
+< h2 style="background-color:red">This is a heading</h2>
+< p style="background-color:blue">This is a paragraph</p>
+< /body>
+< /html>
+
+
+
+
+
+
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/bolg2/" >
-            
-                <span>过河卒</span>
-        </a>
-        <div class="abstract-content">
-            ACM
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
+        <div class="license-wrapper">
+            <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
+            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/">January 19th 2020, 8:49:04 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/">January 19th 2020, 8:49:18 pm</a>
             
         </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/13/firstblog/" >
-            
-                <span>firstblog</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to my blog, enter password to read.
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/13/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Hello HexoQuick StartCreate a new post$ hexo new &quot;My New Post&quot;
-More info: Writing
-Run server...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/13</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/01/18/bolg2/" title= "过河卒">
+                    <div class="prevTitle">过河卒</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -526,6 +584,24 @@ $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
 
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML基础"><span class="toc-number">1.</span> <span class="toc-text">HTML基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套的HTML元素"><span class="toc-number">1.1.</span> <span class="toc-text">嵌套的HTML元素</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -679,6 +755,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
