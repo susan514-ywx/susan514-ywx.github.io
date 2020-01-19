@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">689</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">664</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -397,11 +397,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><ol>
-<li>HTML标题通过&lt; h1 &gt;-&lt; h6 &gt;等标签进行定义的 。</li>
+        <h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><p>1.HTML标题通过&lt; h1 &gt;-&lt; h6 &gt;等标签进行定义的 。</p>
+<ol>
 <li>HTML段落是通过&lt; p &gt;标签进行定义的。</li>
-<li>HTML链接通过&lt; a &gt;标签定义。<br>实例:<br> &lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><br>  href=hypertext reference</li>
-<li>HTML图像通过<img>标签进行定义。<br>实例：<br>&lt; img src=”批注 2020-01-18 161401.jpg”     width=”104” height=”142”/&gt;</li>
+<li>HTML链接通过&lt; a &gt;标签定义。<br>实例:<br>&lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><br> href=hypertext reference<br>4.HTML图像通过<img>标签进行定义。<br> 实例：<br>&lt; img src=”批注 2020-01-18 161401.jpg”     width=”104” height=”142”/&gt;</li>
 </ol>
 <hr>
 <p>HTML文档是由HTLM元素定义的</p>
@@ -411,47 +410,62 @@ height:50vh;
 <hr>
 <p>属性为HTML元素提供附加信息。</p>
 <hr>
-<p>###属性实例：</p>
-<ol>
-<li>HTML链接<br>&lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><ol start="2">
-<li>&lt; h1&gt;定义标题的开始<br>&lt; h1 align=”center”&gt;拥有对齐方式的附加信息</li>
-<li><body>d定义HTLM文档的主体
-<body bycolor="yellow">拥有关于背景颜色的附加信息。</li>
-</ol>
-</li>
-<li>&lt; table&gt;定义HTLM表格<table border="1">拥有关于表格边框的附加信息。
+<p>###属性实例：<br> 1.HTML链接<br>&lt; a href=”<a href="http://baidu.com&quot;&gt;This" target="_blank" rel="noopener">http://baidu.com&quot;&gt;This</a> is a link</a><br>2.&lt; h1&gt;定义标题的开始<br>&lt; h1 align=”center”&gt;拥有对齐方式的附加信息<br>3.<body>d定义HTLM文档的主体</p>
+<body bycolor="yellow">拥有关于背景颜色的附加信息。
+4.< table>定义HTLM表格
+<table border="1">拥有关于表格边框的附加信息。
 ###始终为属性值加引号
 双引号是最常用的，在某些情况下，可使用单引号
 例如：
 name='Bill"hello world"'
 ###HTLM提示：
+1.使用小写属性
+2.属性总是在HTLM元素的开始标签中规定
+3.属性总是以名称——值对的形式出现。
+##HTLM标题
+***
+在HTML文档中，标题很重要，
+***
+##HTML标题
+通过< h1>-< h6>递减定义标题
+注释：浏览器会自动地在标题前后添加空格
+###HTML水平线
+< hr/>标签在HTLM页面中创建水平线
+###HTML注释
+实例：
+<！--注释内容-->
+##HTML段落
+###HTML折行
+在不产生新段落的情况下进行换行（新行），使用< br/>,虽然< br>与< br/>很相似，但在XHTLM，XML及未来的HTLM版本中只可使用<br/>。
+###HTML输出-有用的提示
+所有连续的空格或空行都会算作一个空格，HTML代码中的所有连续的空行（换行)也被显示为一个空格。
+##HTML样式
+***
+style属性的作用：
+提供了一种改变HTML元素的通用方法。
+***
+###实例
+1.背景颜色
+< html>
+< body style="background-color:yellow">
+< h2 style="background-color:red">This is a heading</h2>
+< p style="background-color:blue">This is a paragraph</p>
+< /body>
+< /html>
 
-</li>
-</ol>
-<ol>
-<li>使用小写属性</li>
-<li>属性总是在HTLM元素的开始标签中规定</li>
-<li>属性总是以名称——值对的形式出现。<br>##HTLM标题</li>
-</ol>
-<hr>
-<p>在HTML文档中，标题很重要，</p>
-<hr>
-<p>##HTML标题<br>通过&lt; h1&gt;-&lt; h6&gt;递减定义标题<br>注释：浏览器会自动地在标题前后添加空格<br>###HTML水平线<br>&lt; hr/&gt;标签在HTLM页面中创建水平线<br>###HTML注释<br>实例：<br>&lt;！–注释内容–&gt;<br>##HTML段落<br>###HTML折行<br>在不产生新段落的情况下进行换行（新行），使用&lt; br/&gt;,虽然&lt; br&gt;与&lt; br/&gt;很相似，但在XHTLM，XML及未来的HTLM版本中只可使用<br/>。<br>###HTML输出-有用的提示<br>所有连续的空格或空行都会算作一个空格，HTML代码中的所有连续的空行（换行)也被显示为一个空格。<br>##HTML样式</p>
-<hr>
-<p>style属性的作用：<br>提供了一种改变HTML元素的通用方法。</p>
-<hr>
-<p>###实例</p>
-<ol>
-<li>背景颜色<br>&lt; html&gt;<br>&lt; body style=”background-color:yellow”&gt;<br>&lt; h2 style=”background-color:red”&gt;This is a heading</h2><br>&lt; p style=”background-color:blue”&gt;This is a paragraph</p><br>&lt; /body&gt;<br>&lt; /html&gt;</li>
-</ol>
+
+
+
+
+
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
-            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/">January 19th 2020, 8:49:04 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/">January 19th 2020, 8:52:33 pm</a>
+            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/19/blog3/">January 19th 2020, 8:40:13 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/19/blog3/">January 19th 2020, 8:58:00 pm</a>
             
         </div>
     
@@ -631,10 +645,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 4
@@ -653,11 +663,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/19</span><a class="archive-post-title" href= "/2020/01/19/HTLM%E5%AD%A6%E4%B9%A0/" >HTML</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
         </li>
     
@@ -669,6 +674,20 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/01/19/blog3/" >HTML</a>
         </li>
     
     </div>
