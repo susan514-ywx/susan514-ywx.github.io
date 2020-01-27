@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">629</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">623</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -398,11 +398,12 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="ACM题型"><a href="#ACM题型" class="headerlink" title="ACM题型"></a>ACM题型</h1><ul>
-<li><p>字符判断<br>思路：<br>1). 边输入，边判断<br>2). 全部输入后遍历判断</p>
+<li>字符判断<br>思路：<br>1). 边输入，边判断<br>2). 全部输入后遍历判断</li>
+</ul>
 <blockquote>
-<p>例题1：<br>TeX中的引号<br>在TeX中，左引号是“<code>”，右引号是“&#39;&#39;”。输入一篇包含双引号的文章，需要把他转换成TeX格式。&lt;br&gt;
+<p>例题1：<br>TeX中的引号<br>在TeX中，左引号是“<code>”，右引号是“&#39;&#39;”。输入一篇包含双引号的文章，需要把他转换成TeX格式。 
 样例输入：
-&quot;To be or not to be,&quot; quoth the Bard, &quot;that is the question&quot;.&lt;br&gt;
+&quot;To be or not to be,&quot; quoth the Bard, &quot;that is the question&quot;.
 样例输出：</code>To be or not to be, quoth the Bard,’’ ``that is the question’’.</p>
 </blockquote>
 <pre><code class="C">#include&lt;stdio.h&gt;
@@ -411,40 +412,34 @@ height:50vh;
 //char cha[1000];
 int main()
 {
- int f=0,len=0,ok=1;
- char c;
- //scanf(&quot;%s&quot;,cha);
- //gets(cha);
- FILE *fp;
- fp=fopen(&quot;fin.txt&quot;,&quot;r&quot;);
- if(fp==NULL)
- {
-     printf(&quot;error&quot;);
-     exit(1);
- }
- while(!feof(fp))
- {
-     c=fgetc(fp);
-     if(c==&#39;&quot;&#39;)
- {
-         printf(&quot;%s&quot;,ok?&quot;``&quot;:&quot;&#39;&#39;&quot;);//
-         ok=!ok;
- }
+    int f=0,len=0,ok=1;
+    char c;
+    //scanf(&quot;%s&quot;,cha);
+    //gets(cha);
+    FILE *fp;
+    fp=fopen(&quot;fin.txt&quot;,&quot;r&quot;);
+    if(fp==NULL)
+    {
+        printf(&quot;error&quot;);
+        exit(1);
+    }
+    while(!feof(fp))
+    {
+        c=fgetc(fp);
+        if(c==&#39;&quot;&#39;)
+    {
+            printf(&quot;%s&quot;,ok?&quot;``&quot;:&quot;&#39;&#39;&quot;);//
+            ok=!ok;
+    }
 
-     else
-     printf(&quot;%c&quot;,c);
- }
- fclose(fp);
-}
-```
-</code></pre>
-</li>
-</ul>
+        else
+        printf(&quot;%c&quot;,c);
+    }
+    fclose(fp);
+ }</code></pre>
 <blockquote>
-<p>例题2：<br>输入一个错位后敲出的字符串，输出本来的句子。输入合法，即一定是错位后的字符串。</p>
+<p>例题2：<br>输入一个错位后敲出的字符串，输出本来的句子。输入合法，即一定是错位后的字符串。<br>样例输入：<br>o ;pbr vjoms<br>样例输出:<br>i love china</p>
 </blockquote>
-<p>样例输入：<br>o ;pbr vjoms</p>
-<p>样例输出:<br>i love china</p>
 <hr>
 <p>思路：遍历</p>
 <pre><code class="C">#include&lt;stdio.h&gt;
@@ -519,7 +514,7 @@ int main()
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:15:28 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:23:51 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:31:33 pm</a>
             
         </div>
     
