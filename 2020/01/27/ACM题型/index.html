@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Hello World · fi3ework&#39;s Studio</title>
+    <title>easy question types of ACM · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -219,7 +219,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">easy question types of ACM</a>
             </div>
     </div>
     
@@ -249,7 +249,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            easy question types of ACM
             <!-- 404 -->
             
         </h1>
@@ -268,12 +268,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">76</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">624</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/13</span>
+                    <span class="post-intro-time">2020/01/27</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -397,23 +397,131 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>#ACM题型</p>
+<ul>
+<li><p>字符判断<br>思路：<br>1). 边输入，边判断<br>2). 全部输入后遍历判断</p>
+<blockquote>
+<p>例题1：<br>TeX中的引号<br>在TeX中，左引号是“<code>”，右引号是“&#39;&#39;”。输入一篇包含双引号的文章，需要把他转换成TeX格式。
+样例输入：
+&quot;To be or not to be,&quot; quoth the Bard, &quot;that is the question&quot;.
+样例输出：</code>To be or not to be, quoth the Bard,’’ ``that is the question’’.</p>
+</blockquote>
+<pre><code class="C">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include&lt;stdlib.h&gt;
+//char cha[1000];
+int main()
+{
+ int f=0,len=0,ok=1;
+ char c;
+ //scanf(&quot;%s&quot;,cha);
+ //gets(cha);
+ FILE *fp;
+ fp=fopen(&quot;fin.txt&quot;,&quot;r&quot;);
+ if(fp==NULL)
+ {
+     printf(&quot;error&quot;);
+     exit(1);
+ }
+ while(!feof(fp))
+ {
+     c=fgetc(fp);
+     if(c==&#39;&quot;&#39;)
+ {
+         printf(&quot;%s&quot;,ok?&quot;``&quot;:&quot;&#39;&#39;&quot;);//
+         ok=!ok;
+ }
+
+     else
+     printf(&quot;%c&quot;,c);
+ }
+ fclose(fp);
+}
+```
+&gt;例题2：
+输入一个错位后敲出的字符串，输出本来的句子。输入合法，即一定是错位后的字符串。
+</code></pre>
+</li>
+</ul>
+<p>样例输入：<br>o ;pbr vjoms</p>
+<p>样例输出:<br>i love china</p>
+<hr>
+<p>思路：遍历</p>
+<pre><code class="C">#include&lt;stdio.h&gt;
+int main()
+{
+    char alter[]=&quot;`1234567890-=qwertyuiop[]\\asdfghjkl;&#39;zxcvbnm,./&quot;;
+    char c;
+    int i;
+    /*while((c=getchar())!=EOF)
+    {
+        for(i=1;alter[i];i++)
+        {
+            if(c==alter[i])
+            break;
+        }
+        if(alter[i])
+        putchar(alter[i-1]);
+        else
+        putchar(c); 
+
+     } */
+    while((c=getchar())!=EOF)
+    {
+        for(i=1;alter[i]&amp;&amp;alter[i]!=c;i++);//找错位之后的字符在常量表中的位置 
+
+        if(alter[i])
+        putchar(alter[i-1]);
+        else
+        putchar(c);
+    }
+}</code></pre>
+<blockquote>
+<p>例题3：<br>回文字<br>输入一个字符串，判断他是否文回文串及镜像串,输入的数字不包含0.</p>
+</blockquote>
+<p>样例输入：<br>NOTAPALINDROME<br>ISAPALINILAPASI<br>2A3MEAS<br>ATOYOTA</p>
+<p>样例输出：<br>NOTAPALINDROME is not a palindrome or a mirrored.<br>ISAPALINILAPASI is a palindrome.<br>2A3MEAS is a mirrored string.<br>ATOYOTA is a mirrored palindrome.</p>
+<hr>
+<p>思路：字符数组的遍历</p>
+<pre><code class="C">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include&lt;ctype.h&gt;
+const char* rev=&quot;A   3  HIL JM O   2TUVWXY51SE Z  8 &quot;;//字符型指针，实际是一维字符数组
+const char* msg[]={&quot;not a palindrome or a mirrored&quot;,&quot;a palindrome&quot;,&quot;a mirrored string&quot;,&quot;a mirrored palindrome&quot;}; //指针数组，实际是二维字符数组
+char r(char c)
+{
+    if(isalpha(c))
+    return rev[c-&#39;A&#39;];
+    return rev[c-&#39;0&#39;+25];
+}
+int main()
+{
+    char s[100];
+    int i,len;
+    while(scanf(&quot;%s&quot;,s)!=EOF)
+    {
+        int p=1,m=1;
+        len=strlen(s);
+        for(i=0;i&lt;(len+1)/2;i++)//一半字符 
+        {
+            if(s[i]!=s[len-1-i]) p=0;    
+            if(r(s[i])!=s[len-1-i])m=0;
+        }
+        printf(&quot;%s is %s.\n&quot;,s,msg[p+m*2]);
+    }
+    return 0; 
+ } </code></pre>
+<blockquote>
+<p>const它限定一个变量不允许被改变，产生静态作用。使用const在一定程度上可以提高程序的安全性和可靠性。</p>
+</blockquote>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
-            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/13/hello-world/">January 13th 2020, 11:53:06 am</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/13/hello-world/">January 13th 2020, 12:12:40 pm</a>
+            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:15:28 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:18:08 pm</a>
             
         </div>
     
@@ -421,13 +529,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/01/13/firstblog/" title= "firstblog">
-                    <div class="nextTitle">firstblog</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/01/26/warming/" title= "diary">
+                    <div class="prevTitle">diary</div>
+                </a>
             
         </li>
     </ul>
@@ -548,7 +656,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-Hexo"><span class="toc-number">1.</span> <span class="toc-text">Hello Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">2.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">2.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">2.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">2.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">2.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
