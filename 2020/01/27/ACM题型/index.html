@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.3k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.5k</span>Reading time: <span class="post-count reading-time">7 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -594,14 +594,76 @@ while(scanf(&quot;%d&quot;,&amp;n)!=EOF&amp;&amp;n)
 
     }
  } </code></pre>
+<blockquote>
+<p>例题4：<br>oj平台<br>Sample Input<br>4<br>START<br>1 + 2 = 3<br>END<br>START<br>1+2=3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 4<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1    +    2    =    3<br>END<br>Sample Output<br>Presentation Error<br>Presentation Error<br>Wrong Answer<br>Presentation Error</p>
+</blockquote>
+<p>思路：ac直接判断即可，pe,wa时，需要取出其数据部分，进行对比<br>技巧：START+数据+END看成整体，即一个字符串</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int MAX=1000;
+char a1[MAX],a2[MAX];
+char b1[MAX],b2[MAX];
+char tmp[MAX];
+ void input(char *a,char *b)
+    {
+      gets(tmp);
+      while(gets(tmp))
+      {
+          if(strcmp(tmp,&quot;END&quot;)==0)break;
+          strcat(a,tmp);
+          strcat(a,&quot;\0&quot;);
 
+      }
+      int t=0;
+      int len=strlen(a);
+      for(int i=0;i&lt;len;i++)
+      {
+          if(a[i]!=&#39; &#39;&amp;&amp;a[i]!=&#39;\t&#39;&amp;&amp;a[i]!=&#39;\n&#39;)
+          b[t++]=a[i];
+      }
+      b[t++]=&#39;\0&#39;;
+
+    }
+int main()
+{
+
+    int i;
+    int n;
+
+    cin&gt;&gt;n;
+    getchar();
+    while(n--)
+    {
+            a1[0]=&#39;\0&#39;;
+            a2[0]=&#39;\0&#39;;
+            input(a1,b1);
+            input(a2,b2);
+            if(strcmp(a1,a2)==0)
+            printf(&quot;Accepted\n&quot;);
+            else
+            {
+                 if(strcmp(b1,b2)==0)
+                printf(&quot;Presentation Error\n&quot;);
+                 else
+                {
+                 printf(&quot;Wrong Answer\n&quot;);
+                 }
+
+            }
+
+
+    }
+    system(&quot;pause&quot;);
+
+}</code></pre>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:15:28 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 28th 2020, 8:25:27 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 31st 2020, 7:38:34 pm</a>
             
         </div>
     
