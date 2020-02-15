@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">635</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">634</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,61 +405,14 @@ height:50vh;
     <article class="article-entry">
         <p>#桶思想的应用</p>
 <ul>
-<li><p>什么是桶思想<br>有种排序为桶排序（还不了解），这种方法耗费了内存空间，但是将时间复杂程度降成了线性，它的特点是先分出一定数目的桶，然后将数字映射到各自的桶中，再对非空桶快速排列。</p>
-</li>
-<li><p>何时使用该思想？<br>例如：统计一位学生的成绩，可以给试卷分一定数目的桶，学生的成绩即对应桶。</p>
-<blockquote>
+<li>什么是桶思想<br>有种排序为桶排序（还不了解），这种方法耗费了内存空间，但是将时间复杂程度降成了线性，它的特点是先分出一定数目的桶，然后将数字映射到各自的桶中，再对非空桶快速排列。</li>
+<li>何时使用该思想？<br>例如：统计一位学生的成绩，可以给试卷分一定数目的桶，学生的成绩即对应桶。<blockquote>
 <p>当芸芸众生忙着在朋友圈中发照片的时候，总有一些人因为太帅而没有朋友。本题就要求你找出那些帅到没有朋友的人。<br>输入格式：<br>输入第一行给出一个正整数N（≤100），是已知朋友圈的个数；随后N行，每行首先给出一个正整数K（≤1000），为朋友圈中的人数，然后列出一个朋友圈内的所有人——为方便起见，每人对应一个ID号，为5位数字（从00000到99999），ID间以空格分隔；之后给出一个正整数M（≤10000），为待查询的人数；随后一行中列出M个待查询的ID，以空格分隔。<br>注意：没有朋友的人可以是根本没安装“朋友圈”，也可以是只有自己一个人在朋友圈的人。虽然有个别自恋狂会自己把自己反复加进朋友圈，但题目保证所有K超过1的朋友圈里都至少有2个不同的人。<br>输出格式：<br>按输入的顺序输出那些帅到没朋友的人。ID间用1个空格分隔，行的首尾不得有多余空格。如果没有人太帅，则输出No one is handsome。<br>注意：同一个人可以被查询多次，但只输出一次。<br>输入样例1：<br>3<br>3 11111 22222 55555<br>2 33333 44444<br>4 55555 66666 99999 77777<br>8<br>55555 44444 10000 88888 22222 11111 23333 88888<br>输出样例1：<br>10000 88888 23333<br>输入样例2：<br>3<br>3 11111 22222 55555<br>2 33333 44444<br>4 55555 66666 99999 77777<br>4<br>55555 44444 22222 11111<br>输出样例2：<br>No one is handsome</p>
 </blockquote>
-<pre><code>#include&lt;stdio.h&gt;
-int ch[100001];
-int main()
-{
- int n;
- while(scanf(&quot;%d&quot;,&amp;n)!=EOF)
- {
-    int flag=1;
-    for(int i=0;i&lt;n;i++)
-  {
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> ch[<span class="number">100001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> n;</span><br><span class="line">   <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      </span><br><span class="line">      <span class="keyword">int</span> k;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="keyword">int</span> id;</span><br><span class="line">         <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;id);</span><br><span class="line">         <span class="keyword">if</span>(k!=<span class="number">1</span>)</span><br><span class="line">         ch[id]=<span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="keyword">int</span> m;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="keyword">int</span> h;</span><br><span class="line">         <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;h);</span><br><span class="line">         <span class="keyword">if</span>(ch[h]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">if</span>(flag)</span><br><span class="line">           &#123;</span><br><span class="line">              <span class="built_in">printf</span>(<span class="string">"%d"</span>,h);</span><br><span class="line">              ch[h]=<span class="number">1</span>;</span><br><span class="line">              flag=<span class="number">0</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           &#123;</span><br><span class="line">              <span class="built_in">printf</span>(<span class="string">" %d"</span>,h);</span><br><span class="line">              ch[h]=<span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(flag)</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"No one is handsome"</span>);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    int k;
-    scanf(&quot;%d&quot;,&amp;k);
-    for(int i=0;i&lt;k;i++)
-    {
-       int id;
-       scanf(&quot;%d&quot;,&amp;id);
-       if(k!=1)
-       ch[id]=1;
-    }
-  }
-    int m;
-    scanf(&quot;%d&quot;,&amp;m);
-    for(int i=0;i&lt;m;i++)
-    {
-       int h;
-       scanf(&quot;%d&quot;,&amp;h);
-       if(ch[h]==0)
-      {
-         if(flag)
-         {
-            printf(&quot;%d&quot;,h);
-            ch[h]=1;
-            flag=0;
-         }
-         else
-         {
-            printf(&quot; %d&quot;,h);
-            ch[h]=1;
-         }
 
-      }
-    }
-    if(flag)
-    printf(&quot;No one is handsome&quot;);
-    printf(&quot;\n&quot;);
-
- }
-}</code></pre></li>
+</li>
 </ul>
 
     </article>
@@ -735,20 +688,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -781,31 +720,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
-        </li>
-    
-    
     
     
     
@@ -830,7 +744,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
         </li>
     
     
@@ -853,12 +782,40 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" >C++重载构造函数</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -868,9 +825,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
-        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
-    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

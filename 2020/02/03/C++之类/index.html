@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -398,203 +398,24 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>#C++类笔记</p>
-<h2 id="1-class和struct区别"><a href="#1-class和struct区别" class="headerlink" title="1.class和struct区别"></a>1.class和struct区别</h2><pre><code>#include&lt;iostream&gt;
-using namespace std;
-class  CBase//类默认private
-{
-    int a;
-    int b;
-};
-CBase obji;
-int x=obji.a;//错误
-int t=obji.b;//错误
-struct stest//结构体默认public
-{
-   int a;
-   int b;
-};
-stest st;
-int x=st.a;//正确
-int x=st.b;//正确
-int main()
-{
-    return 0;
-}</code></pre><blockquote>
+<h2 id="1-class和struct区别"><a href="#1-class和struct区别" class="headerlink" title="1.class和struct区别"></a>1.class和struct区别</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">CBase</span>//类默认<span class="title">private</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line">CBase obji;</span><br><span class="line"><span class="keyword">int</span> x=obji.a;<span class="comment">//错误</span></span><br><span class="line"><span class="keyword">int</span> t=obji.b;<span class="comment">//错误</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stest</span>//结构体默认<span class="title">public</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">int</span> a;</span><br><span class="line">   <span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line">stest st;</span><br><span class="line"><span class="keyword">int</span> x=st.a;<span class="comment">//正确</span></span><br><span class="line"><span class="keyword">int</span> x=st.b;<span class="comment">//正确</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>1.class不写修饰时，成员默认是private的，而struct默认是public<br>2.class继承默认是private，而struct默认是public的。<br>##2. C++类的定义<br>###2.1格式：<br>###2.2关于public,protected,private的访问权限控制。<br>####2.2.1public的访问权限<br>一个类的public成员变量，成员函数，可以通过类的成员函数，类的实例变量进行访问<br>实例:</p>
 </blockquote>
-<pre><code class="#include&lt;iostream&gt;">using namespace std;
-class accessPS
-{
-public://可以在类外访问
-    int pub_num;
-    int pub_Fun(){cout &lt;&lt;&quot;调用共有成员&quot;&lt;&lt;endl;return 0;};
-private://私有
-    int pri_num;
-    int pri_Fun(){cout &lt;&lt;&quot;调用私有成员&quot;&lt;&lt;endl;return 0;};
-protected://保护
-    int pro_num;
-    int pro_Fun(){cout &lt;&lt;&quot;调用保护成员&quot;&lt;&lt;endl;return 0;};
-};
-####
-
-int main()
-{
-    accessPS obja;
-    obja.pub_Fun();
-    obja.pub_num=1500;
-    cout&lt;&lt;obja.pub_num&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line">class accessPS</span><br><span class="line">&#123;</span><br><span class="line">public:&#x2F;&#x2F;可以在类外访问</span><br><span class="line">    int pub_num;</span><br><span class="line">    int pub_Fun()&#123;cout &lt;&lt;&quot;调用共有成员&quot;&lt;&lt;endl;return 0;&#125;;</span><br><span class="line">private:&#x2F;&#x2F;私有</span><br><span class="line">    int pri_num;</span><br><span class="line">    int pri_Fun()&#123;cout &lt;&lt;&quot;调用私有成员&quot;&lt;&lt;endl;return 0;&#125;;</span><br><span class="line">protected:&#x2F;&#x2F;保护</span><br><span class="line">    int pro_num;</span><br><span class="line">    int pro_Fun()&#123;cout &lt;&lt;&quot;调用保护成员&quot;&lt;&lt;endl;return 0;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">####</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    accessPS obja;</span><br><span class="line">    obja.pub_Fun();</span><br><span class="line">    obja.pub_num&#x3D;1500;</span><br><span class="line">    cout&lt;&lt;obja.pub_num&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>####2.2.2protected的访问权限<br>一个类的protected成员变量，成员函数无法通过类的实例变量进行访问，但是可以通过类的友元函数，友元类进行访问。<br>实战技术：</p>
-<pre><code>#include&lt;iostream&gt;
-using namespace std;
-class accessps
-{
-public:
-    friend void pstest();
-    friend class accesspa;
-public://可以在类外访问
-    int pub_num;
-    int pub_Fun(){cout &lt;&lt;&quot;调用共有成员&quot;&lt;&lt;endl;return 0;};
-private://私有,只能在类内访问
-    int pri_num;
-    int pri_Fun(){cout &lt;&lt;&quot;调用私有成员&quot;&lt;&lt;endl;return 0;};
-protected://保护，只能在类内访问
-    int pro_num;
-    int pro_Fun(){cout &lt;&lt;&quot;调用保护成员&quot;&lt;&lt;endl;return 0;};
-};
-class accesspa
-{
-    public:
-    void x()
-    {
-       accessps t;
-       t.pro_Fun();//正确的友元类可以访问protected成员函数
-       int x =t.pro_num;//友元类可以访问protected成员变量
-
-    }
-};
-void pstest()
-{
-    accesspa t;
-    int x=t.x;
-}
-int main()
-{
-    accessps obja;
-    obja.pub_Fun();
-    obja.pub_num=1500;
-    cout&lt;&lt;obja.pub_num&lt;&lt;endl;
-    return 0;
-}</code></pre><p>####2.2.3private访问权限<br>一个类的private成员变量，成员函数，无法通过类的实例变量进行访问，但是可以友元函数，友元类进行访问。<br>实战技术：</p>
-<pre><code>#include&lt;iostream&gt;
-using namespace std;
-class accesstest
-{
-    friend void atest();
-    friend class catest;
-
-    public:
-        int pub_eme;
-        int pub_fun(){return 0;};
-    protected:
-        int prot_eme;
-        int pro_fun(){return 0;};
-    private:
-        int pri_eme;
-        int pri_fun(){return 0;};
-};
-class catest
-{
-    public:
-        void x()
-        {
-            accesstest t;
-            t.pri_fun();//友元类可以访问private成员变量函数
-            int x=t.pri_eme;//友元可以访问private成员变量
-        }
-};
-void atest()
-{
-    accesstest t;
-    t.pri_fun();
-    int x=t.pri_eme;
-
-}
-int main()
-{
-    accesstest at;
-   // at.pri_mem;//类的外面不能访问私有成员
-
-    atest();
-
-    return 0;
-}</code></pre><p>总结一句话，public在任何地方都能访问，protected只能在派生类中访问，private只能在友元中进行访问。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">accessps</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">pstest</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">accesspa</span>;</span></span><br><span class="line"><span class="keyword">public</span>:<span class="comment">//可以在类外访问</span></span><br><span class="line">    <span class="keyword">int</span> pub_num;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pub_Fun</span><span class="params">()</span></span>&#123;<span class="built_in">cout</span> &lt;&lt;<span class="string">"调用共有成员"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line"><span class="keyword">private</span>:<span class="comment">//私有,只能在类内访问</span></span><br><span class="line">    <span class="keyword">int</span> pri_num;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pri_Fun</span><span class="params">()</span></span>&#123;<span class="built_in">cout</span> &lt;&lt;<span class="string">"调用私有成员"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line"><span class="keyword">protected</span>:<span class="comment">//保护，只能在类内访问</span></span><br><span class="line">    <span class="keyword">int</span> pro_num;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pro_Fun</span><span class="params">()</span></span>&#123;<span class="built_in">cout</span> &lt;&lt;<span class="string">"调用保护成员"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">accesspa</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">x</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">       accessps t;</span><br><span class="line">       t.pro_Fun();<span class="comment">//正确的友元类可以访问protected成员函数</span></span><br><span class="line">       <span class="keyword">int</span> x =t.pro_num;<span class="comment">//友元类可以访问protected成员变量</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pstest</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    accesspa t;</span><br><span class="line">    <span class="keyword">int</span> x=t.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    accessps obja;</span><br><span class="line">    obja.pub_Fun();</span><br><span class="line">    obja.pub_num=<span class="number">1500</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;obja.pub_num&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####2.2.3private访问权限<br>一个类的private成员变量，成员函数，无法通过类的实例变量进行访问，但是可以友元函数，友元类进行访问。<br>实战技术：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">accesstest</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">atest</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">catest</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="keyword">int</span> pub_eme;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">pub_fun</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line">    <span class="keyword">protected</span>:</span><br><span class="line">        <span class="keyword">int</span> prot_eme;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">pro_fun</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> pri_eme;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">pri_fun</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">catest</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">x</span><span class="params">()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            accesstest t;</span><br><span class="line">            t.pri_fun();<span class="comment">//友元类可以访问private成员变量函数</span></span><br><span class="line">            <span class="keyword">int</span> x=t.pri_eme;<span class="comment">//友元可以访问private成员变量</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">atest</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    accesstest t;</span><br><span class="line">    t.pri_fun();</span><br><span class="line">    <span class="keyword">int</span> x=t.pri_eme;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    accesstest at;</span><br><span class="line">   <span class="comment">// at.pri_mem;//类的外面不能访问私有成员</span></span><br><span class="line"></span><br><span class="line">    atest();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结一句话，public在任何地方都能访问，protected只能在派生类中访问，private只能在友元中进行访问。</p>
 <p>##3.利用构造函数对类进行初始化<br>###3.1对象的初始化<br>在程序中常见对变量赋初值。<br>声明类时对数据成员初始化</p>
-<pre><code>#include&lt;iostream&gt;
-using namespace std;
-class time
-{
-public:
-    int hour;
-    int minute;
-    int second;//不能在类声明中对数据成员初始化
-};
-//类不是实体而是抽象类型，不占用空间，显然无法容纳数据
-time t1={15,37,98};
-int main()
-{
-
-    return 0;
-}</code></pre><p>###3.2构造函数实现数据成员的初始化问题<br>   C++提供了构造函数（constructor)来处理对象的初始化，是一种特殊的成员函数，与其他成员函数不同，不需要用户来调用它，而是在建立对象的时候自动执行。</p>
-<pre><code>   #include&lt;iostream&gt;
-using namespace std;
-class time
-{
-public :
-    time()//定义构造成员函数，函数名与类名相同
-    {
-        hour=0;
-        minute=0;
-        second=0;
-        cout&lt;&lt;&quot;调用构造函数&quot;&lt;&lt;endl;
-    }
-    void set_time ();//设置时间
-    void show_time();//显示时间
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">time</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> hour;</span><br><span class="line">    <span class="keyword">int</span> minute;</span><br><span class="line">    <span class="keyword">int</span> second;<span class="comment">//不能在类声明中对数据成员初始化</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//类不是实体而是抽象类型，不占用空间，显然无法容纳数据</span></span><br><span class="line">time t1=&#123;<span class="number">15</span>,<span class="number">37</span>,<span class="number">98</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###3.2构造函数实现数据成员的初始化问题<br>   C++提供了构造函数（constructor)来处理对象的初始化，是一种特殊的成员函数，与其他成员函数不同，不需要用户来调用它，而是在建立对象的时候自动执行。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">time</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    time()<span class="comment">//定义构造成员函数，函数名与类名相同</span></span><br><span class="line">    &#123;</span><br><span class="line">        hour=<span class="number">0</span>;</span><br><span class="line">        minute=<span class="number">0</span>;</span><br><span class="line">        second=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"调用构造函数"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set_time</span> <span class="params">()</span></span>;<span class="comment">//设置时间</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show_time</span><span class="params">()</span></span>;<span class="comment">//显示时间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> hour;</span><br><span class="line">    <span class="keyword">int</span> minute;</span><br><span class="line">    <span class="keyword">int</span> second; </span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> time::set_time()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入时：分：秒\n"</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;hour;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;minute;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;second;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> time::show_time()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;hour&lt;&lt;<span class="string">":"</span>&lt;&lt;minute&lt;&lt;<span class="string">":"</span>&lt;&lt;second;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    time t1;<span class="comment">//创建一个对象调用一次构造函数</span></span><br><span class="line">    </span><br><span class="line">    t1.show_time();</span><br><span class="line"></span><br><span class="line">    t1.set_time();</span><br><span class="line">    t1.show_time();</span><br><span class="line">    time t2;<span class="comment">//在哪开始创建在哪开始执行</span></span><br><span class="line">    t2.show_time();</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-private:
-    int hour;
-    int minute;
-    int second; 
-};
-void time::set_time()
-{
-    cout&lt;&lt;&quot;请输入时：分：秒\n&quot;;
-    cin&gt;&gt;hour;
-    cin&gt;&gt;minute;
-    cin&gt;&gt;second;
-
-}
-void time::show_time()
-{
-    cout&lt;&lt;hour&lt;&lt;&quot;:&quot;&lt;&lt;minute&lt;&lt;&quot;:&quot;&lt;&lt;second;
-}
-int main()
-{
-    time t1;//创建一个对象调用一次构造函数
-
-    t1.show_time();
-
-    t1.set_time();
-    t1.show_time();
-    time t2;//在哪开始创建在哪开始执行
-    t2.show_time();
 
 
-    return 0;
-}</code></pre>
     </article>
     <!-- license  -->
     
@@ -868,20 +689,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -914,31 +721,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
-        </li>
-    
-    
     
     
     
@@ -963,7 +745,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
         </li>
     
     
@@ -986,12 +783,40 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" >C++重载构造函数</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -1001,9 +826,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
-        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
-    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

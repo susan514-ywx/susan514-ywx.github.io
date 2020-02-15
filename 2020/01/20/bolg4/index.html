@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">255</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">266</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,31 +407,8 @@ height:50vh;
 <p>输出样例#1：<br>8</p>
 </blockquote>
 <p>三层循环暴力解题法</p>
-<pre><code class="C">#include&lt;iostream&gt;
-#include&lt;cmath&gt;
-using namespace std; 
- main()
- {
-    int n,m,r,c=0;
-    int x[101];
-    int y[101];
-    cin&gt;&gt;n&gt;&gt;m&gt;&gt;r;
-    for(int i=0;i&lt;m;i++)
-        cin&gt;&gt;x[i]&gt;&gt;y[i];
-        for(int i=1;i&lt;=n;i++){
-            for(int j=1;j&lt;=n;j++){
-                for(int k=0;k&lt;m;k++){
-                    double dis=sqrt((x[k]-i)*(x[k]-i)+(y[k]-j)*(y[k]-j));
-                    if(dis&lt;=double (r)) 
-                    {
-                        c++;
-                        break;
-                    }
-                }
-        }
-    }
-        cout&lt;&lt;c; 
-}</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; </span><br><span class="line"> main()</span><br><span class="line"> &#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,r,c=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> x[<span class="number">101</span>];</span><br><span class="line">	<span class="keyword">int</span> y[<span class="number">101</span>];</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;r;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x[i]&gt;&gt;y[i];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;m;k++)&#123;</span><br><span class="line">					<span class="keyword">double</span> dis=<span class="built_in">sqrt</span>((x[k]-i)*(x[k]-i)+(y[k]-j)*(y[k]-j));</span><br><span class="line">					<span class="keyword">if</span>(dis&lt;=<span class="keyword">double</span> (r)) </span><br><span class="line">					&#123;</span><br><span class="line">						c++;</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;c; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </article>
     <!-- license  -->
@@ -706,20 +683,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -752,31 +715,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
-        </li>
-    
-    
     
     
     
@@ -801,7 +739,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
         </li>
     
     
@@ -824,12 +777,40 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" >C++重载构造函数</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -839,9 +820,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
-        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
-    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

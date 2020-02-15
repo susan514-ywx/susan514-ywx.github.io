@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">849</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">830</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -426,37 +426,22 @@ height:50vh;
 </ul>
 <h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><ul>
 <li>硬性规则：与C一样</li>
-<li>PEP8要求：<br/><br>　　　　　1.用小写字母拼写，多个单词用下划线连接<br/><br>　　　　　2.受保护的实例属性用单个下划线开头<br/><br>　　　　　3.私有的实例属性用两个下划线开头<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<pre><code class="python">#使用type()来检测变量的类型
-a=100
-b=1.23
-c=1+5j
-d=&#39;hello world&#39;
-e=True
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-print(type(e))
-</code></pre>
+<li>PEP8要求：<br/><br>　　　　　1.用小写字母拼写，多个单词用下划线连接<br/><br>　　　　　2.受保护的实例属性用单个下划线开头<br/><br>　　　　　3.私有的实例属性用两个下划线开头<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用type()来检测变量的类型</span></span><br><span class="line">a=<span class="number">100</span></span><br><span class="line">b=<span class="number">1.23</span></span><br><span class="line">c=<span class="number">1</span>+<span class="number">5j</span></span><br><span class="line">d=<span class="string">'hello world'</span></span><br><span class="line">e=<span class="literal">True</span></span><br><span class="line">print(type(a))</span><br><span class="line">print(type(b))</span><br><span class="line">print(type(c))</span><br><span class="line">print(type(d))</span><br><span class="line">print(type(e))</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<pre><code>
-python内置函数对变量类型进行转换
-- int()
-- float()
-- str()
-- chr（）
-- ord()
+<p>python内置函数对变量类型进行转换</p>
+<ul>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>chr（）</li>
+<li>ord()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用input()函数获取键盘输入（字符串）</span></span><br><span class="line"><span class="comment">#使用print（）函数输出带占位符的字符串</span></span><br><span class="line">a=int(input(<span class="string">'a= '</span>))</span><br><span class="line">b=int(input(<span class="string">'b= '</span>))</span><br><span class="line">print(<span class="string">'%d+%d=%d'</span>%(a,b,a+b))</span><br><span class="line">print(<span class="string">'%d//%d=%d'</span>%(a,b,a//b))</span><br><span class="line">print(<span class="string">'%d%%%d=%d'</span>%(a,b,a%b))//注意</span><br><span class="line">print(<span class="string">'%d**%d=%d'</span>%(a,b,a**b))</span><br></pre></td></tr></table></figure>
 
-```python
-#使用input()函数获取键盘输入（字符串）
-#使用print（）函数输出带占位符的字符串
-a=int(input(&#39;a= &#39;))
-b=int(input(&#39;b= &#39;))
-print(&#39;%d+%d=%d&#39;%(a,b,a+b))
-print(&#39;%d//%d=%d&#39;%(a,b,a//b))
-print(&#39;%d%%%d=%d&#39;%(a,b,a%b))//注意
-print(&#39;%d**%d=%d&#39;%(a,b,a**b))</code></pre><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
+
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -573,9 +558,8 @@ print(&#39;%d**%d=%d&#39;%(a,b,a**b))</code></pre><h3 id="运算符"><a href="#�
 </tr>
 </tbody></table>
 <p>练习：判断是否为闰年</p>
-<pre><code class="python">year=int(input(&#39;请输入一个年份：&#39;))
-is_leap=(year%4==0 and year%100!=0 or year%400==0)
-print(is_leap)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">year=int(input(<span class="string">'请输入一个年份：'</span>))</span><br><span class="line">is_leap=(year%<span class="number">4</span>==<span class="number">0</span> <span class="keyword">and</span> year%<span class="number">100</span>!=<span class="number">0</span> <span class="keyword">or</span> year%<span class="number">400</span>==<span class="number">0</span>)</span><br><span class="line">print(is_leap)</span><br></pre></td></tr></table></figure>
+
 <p>附：这也是teacher Lin向我提问的第一个问题，结果我把第1，3个%写成了//，今天又重蹈覆辙。能否被整除要用取余运算符，看余数是否为0，而不是用取整运算符，带个整字，就老想翻你的牌子，因此为诫以后涉及于此能想到这两次教训。</p>
 
     </article>
@@ -846,20 +830,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -892,31 +862,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
-        </li>
-    
-    
     
     
     
@@ -941,7 +886,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
         </li>
     
     
@@ -964,12 +924,40 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" >C++重载构造函数</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -979,9 +967,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
-        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
-    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

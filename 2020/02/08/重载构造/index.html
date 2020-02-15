@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">292</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">297</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,41 +407,8 @@ height:50vh;
 <hr>
 <ul>
 <li>默认构造函数（其实在定义了对象后会自动调用计算机已经写好了的一个默认构造函数，初始值都为0，但作为基本素养，一般会亲自再写一个默认构造函数）（简单点说默认就是指没有实参，初值随意啦）</li>
-<li>重载构造函数（此时就是按需自由给private成员变量赋值）<pre><code>#include&lt;iostream&gt;
-using namespace std;
-class elevator
-{
-  public:
-      elevator();
-      elevator(int floor);
-      void change();
-      void display();
-  private:
-      int floor;
-};
-elevator::elevator()
-{
-  floor=0;
-  printf(&quot;调用该函数1&quot;);
-}
-elevator::elevator(int floor1)
-{
-  floor=floor1;
-  //floor=0;我想调用重载构造函数，但传实参时，结果一直是0，ou~找了好久的错，终于逮住着这个bug了，我直接给变量赋0，传啥也不管用了
-  printf(&quot;调用该函数2\n&quot;);
-}
-void elevator::change()
-{
-  char fuhao;
-  cin&gt;&gt;fuhao;
-  if(fuhao==&#39;-&#39;&amp;&amp;floor&gt;=1)
-  floor--;
-  if(fuhao==&#39;+&#39;&amp;&amp;floor&lt;=10)
-  floor++;
-</code></pre></li>
+<li>重载构造函数（此时就是按需自由给private成员变量赋值）<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">elevator</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        elevator();</span><br><span class="line">        elevator(<span class="keyword">int</span> <span class="built_in">floor</span>);</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">floor</span>;</span><br><span class="line">&#125;;</span><br><span class="line">elevator::elevator()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">floor</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"调用该函数1"</span>);</span><br><span class="line">&#125;</span><br><span class="line">elevator::elevator(<span class="keyword">int</span> floor1)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">floor</span>=floor1;</span><br><span class="line">    <span class="comment">//floor=0;我想调用重载构造函数，但传实参时，结果一直是0，ou~找了好久的错，终于逮住着这个bug了，我直接给变量赋0，传啥也不管用了</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"调用该函数2\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> elevator::change()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">char</span> fuhao;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;fuhao;</span><br><span class="line">    <span class="keyword">if</span>(fuhao==<span class="string">'-'</span>&amp;&amp;<span class="built_in">floor</span>&gt;=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">floor</span>--;</span><br><span class="line">    <span class="keyword">if</span>(fuhao==<span class="string">'+'</span>&amp;&amp;<span class="built_in">floor</span>&lt;=<span class="number">10</span>)</span><br><span class="line">    <span class="built_in">floor</span>++;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> elevator::<span class="built_in">display</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">floor</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">elevator <span class="title">elevator</span><span class="params">(<span class="number">19</span>)</span></span>;</span><br><span class="line">   <span class="comment">// elevator.change();</span></span><br><span class="line">    elevator.<span class="built_in">display</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>}<br>void elevator::display()<br>{<br>    cout&lt;&lt;floor;<br>}<br>int main()<br>{<br>    elevator elevator(19);<br>   // elevator.change();<br>    elevator.display();<br>    return 0;</p>
-<p>}<br>```</p>
 
     </article>
     <!-- license  -->
@@ -716,20 +683,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -762,31 +715,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
-        </li>
-    
-    
     
     
     
@@ -811,7 +739,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2020/01/27/ACM%E9%A2%98%E5%9E%8B/" >easy question types of ACM</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2020/01/26/warming/" >diary</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/bolg2/" >过河卒</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/firstblog/" >firstblog</a>
         </li>
     
     
@@ -834,12 +777,40 @@ top:50vh;
     
         </ul>
     
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span><a class="archive-post-title" href= "/2020/01/20/bolg4/" >violent</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" >C++重载构造函数</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2020/01/13/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -849,9 +820,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
-        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
-    
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
