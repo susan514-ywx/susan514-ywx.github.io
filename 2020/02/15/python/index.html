@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>python · fi3ework&#39;s Studio</title>
+    <title>notes of python · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -219,7 +219,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">python</a>
+                <a href="#" class="post-name">notes of python</a>
             </div>
     </div>
     
@@ -249,7 +249,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            python
+            notes of python
             <!-- 404 -->
             
         </h1>
@@ -266,9 +266,15 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">844</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">838</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -397,10 +403,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <hr>
-<p>title:  notes of python<br>message: imperfect<br>tag: python</p>
-<hr>
-<h1 id="初学python"><a href="#初学python" class="headerlink" title="初学python"></a>初学python</h1><p>（有C的基础）</p>
+        <h1 id="初学python"><a href="#初学python" class="headerlink" title="初学python"></a>初学python</h1><p>（有C的基础）</p>
 <blockquote>
 <ol>
 <li>写出习题的代码，在 Linux 下用 gedit，OSX 下用 TextWrangler，Windows 下用 Notepad++。 2. 运行你写的习题。 3. 修改错误的地方。 4. 重复上述步骤。</li>
@@ -423,9 +426,9 @@ height:50vh;
 <li>布尔型：Ture False(首字符大写）</li>
 <li>复数型：高中学的复数一样，只做了解<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3></li>
 <li>硬性规则：与C一样</li>
-<li>PEP8要求：<pre><code>    1.用小写字母拼写，多个单词用下划线             连接
-    2.受保护的实例属性用单个下划线开头
-    3.私有的实例属性用两个下划线开头</code></pre><h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<pre><code>#使用type()来检测变量的类型
+<li>PEP8要求：<pre><code>   \ 1.用小写字母拼写，多个单词用下划线             连接
+   \ 2.受保护的实例属性用单个下划线开头
+   \ 3.私有的实例属性用两个下划线开头</code></pre><h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<pre><code>#使用type()来检测变量的类型
 a=100
 b=1.23
 c=1+5j
@@ -438,13 +441,16 @@ print(type(d))
 print(type(e))
 </code></pre></li>
 </ul>
-<pre><code>python内置函数对变量类型进行转换
+<pre><code>
+python内置函数对变量类型进行转换
 - int()
 - float()
 - str()
 - chr（）
-- ord()</code></pre><p>#使用input()函数获取键盘输入（字符串）<br>#使用print（）函数输出带占位符的字符串<br>a=int(input(‘a= ‘))<br>b=int(input(‘b= ‘))<br>print(‘%d+%d=%d’%(a,b,a+b))<br>print(‘%d//%d=%d’%(a,b,a//b))<br>print(‘%d%%%d=%d’%(a,b,a%b))//注意<br>print(‘%d<strong>%d=%d’%(a,b,a</strong>b))</p>
+- ord()
+</code></pre><p>#使用input()函数获取键盘输入（字符串）<br>#使用print（）函数输出带占位符的字符串<br>a=int(input(‘a= ‘))<br>b=int(input(‘b= ‘))<br>print(‘%d+%d=%d’%(a,b,a+b))<br>print(‘%d//%d=%d’%(a,b,a//b))<br>print(‘%d%%%d=%d’%(a,b,a%b))//注意<br>print(‘%d<strong>%d=%d’%(a,b,a</strong>b))</p>
 <pre><code>### 运算符
+
 |运算符|解释|
 |--|--|
 |[] [:]|下标，切片|
@@ -466,9 +472,9 @@ print(type(e))
 |转换说明符|作用|
 |--|----|
 |%d、%i|转换为带符号的十进制整数|
-|%o|转换为带符号的八进制整数|
+|%o |转换为带符号的八进制整数|
 |%x、%X|转换为带符号的十六进制整数|
-|%e|转化为科学计数法表示的浮点数（e 小写）|
+|%e |转化为科学计数法表示的浮点数（e 小写）|
 |%E|转化为科学计数法表示的浮点数（E 大写）|
 |%f、%F|转化为十进制浮点数|
 |%g|智能选择使用 %f 或 %e 格式|
@@ -477,8 +483,10 @@ print(type(e))
 |%r|使用 repr() 函数将表达式转换为字符串（什么字符都可输出）|
 |%s|使用 str() 函数将表达式转换为字符串|
 
-练习：判断是否为闰年</code></pre><p>year=int(input(‘请输入一个年份：’))<br>is_leap=(year%4==0 and year%100!=0 or year%400==0)<br>print(is_leap)</p>
-<p>```<br>附：这也是teacher Lin向我提问的第一个问题，结果我把第1，3个%写成了//，今天又重蹈覆辙。能否被整除要用取余运算符，看余数是否为0，而不是用取整运算符，带个整字，就老想翻你的牌子，因此为界以后涉及于此能想到这两次教训。</p>
+练习：判断是否为闰年
+</code></pre><p>year=int(input(‘请输入一个年份：’))<br>is_leap=(year%4==0 and year%100!=0 or year%400==0)<br>print(is_leap)</p>
+<p>```</p>
+<p>附：这也是teacher Lin向我提问的第一个问题，结果我把第1，3个%写成了//，今天又重蹈覆辙。能否被整除要用取余运算符，看余数是否为0，而不是用取整运算符，带个整字，就老想翻你的牌子，因此为界以后涉及于此能想到这两次教训。</p>
 
     </article>
     <!-- license  -->
@@ -486,7 +494,7 @@ print(type(e))
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:02:29 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:14:37 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:21:02 pm</a>
             
         </div>
     
@@ -780,7 +788,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2020/02/15/python/" >python</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href= "/2020/02/15/python/" >notes of python</a>
         </li>
     
     
@@ -882,6 +890,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="question types of ACM"><span class="iconfont-archer">&#xe606;</span>question types of ACM</span>
     
         <span class="sidebar-tag-name" data-tags="base of C++"><span class="iconfont-archer">&#xe606;</span>base of C++</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
