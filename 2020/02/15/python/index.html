@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">838</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">847</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -422,13 +422,15 @@ height:50vh;
 <h2 id="语言元素"><a href="#语言元素" class="headerlink" title="语言元素"></a>语言元素</h2><h3 id="变量和类型"><a href="#变量和类型" class="headerlink" title="变量和类型"></a>变量和类型</h3><ul>
 <li>整型：python3.x中可以处理任意大小的整数</li>
 <li>浮点型</li>
-<li>字符型：由单引号或双引号括起来的任意文本<pre><code>    （原始字符串表示法，字节表示法，Uni             code表示以后了解）</code></pre></li>
+<li>字符型：由单引号或双引号括起来的任意文本（原始字符串表示法，字节表示法，Unicode表示以后了解）</li>
 <li>布尔型：Ture False(首字符大写）</li>
 <li>复数型：高中学的复数一样，只做了解<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3></li>
 <li>硬性规则：与C一样</li>
-<li>PEP8要求：<pre><code>   \ 1.用小写字母拼写，多个单词用下划线             连接
-   \ 2.受保护的实例属性用单个下划线开头
-   \ 3.私有的实例属性用两个下划线开头</code></pre><h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<pre><code>#使用type()来检测变量的类型
+<li>PEP8要求：</li>
+</ul>
+<p>1.用小写字母拼写，多个单词用下划线连接<br>2.受保护的实例属性用单个下划线开头<br>3.私有的实例属性用两个下划线开头</p>
+<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3><p>用实例看变量</p>
+<pre><code class="python">#使用type()来检测变量的类型
 a=100
 b=1.23
 c=1+5j
@@ -439,53 +441,143 @@ print(type(b))
 print(type(c))
 print(type(d))
 print(type(e))
-</code></pre></li>
+</code></pre>
+<p>python内置函数对变量类型进行转换</p>
+<ul>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>chr（）</li>
+<li>ord()</li>
 </ul>
-<pre><code>
-python内置函数对变量类型进行转换
-- int()
-- float()
-- str()
-- chr（）
-- ord()
-</code></pre><p>#使用input()函数获取键盘输入（字符串）<br>#使用print（）函数输出带占位符的字符串<br>a=int(input(‘a= ‘))<br>b=int(input(‘b= ‘))<br>print(‘%d+%d=%d’%(a,b,a+b))<br>print(‘%d//%d=%d’%(a,b,a//b))<br>print(‘%d%%%d=%d’%(a,b,a%b))//注意<br>print(‘%d<strong>%d=%d’%(a,b,a</strong>b))</p>
-<pre><code>### 运算符
-
-|运算符|解释|
-|--|--|
-|[] [:]|下标，切片|
-|**|指数|
-|~ + -|按位取反, 正负号|
-| \* / % // |乘，除，模，整除
-| \+ -|加，减|
-| \&gt;&gt; &lt;&lt; |右移，左移|
-|&amp;|按位与|
-|^ |按位异或，按位或
-|&lt;= &lt; &gt; &gt;=|小于等于，小于，大于，大于等于
-|== !=|等于，不等于
-|is is not|身份运算符|
-|in not in||成员运算符|
-|not or and|逻辑运算符|
-|= += -= *= /= %= //= **= &amp;= `|= ^= &gt;&gt;= &lt;&lt;=`
-
-### python格式化字符串
-|转换说明符|作用|
-|--|----|
-|%d、%i|转换为带符号的十进制整数|
-|%o |转换为带符号的八进制整数|
-|%x、%X|转换为带符号的十六进制整数|
-|%e |转化为科学计数法表示的浮点数（e 小写）|
-|%E|转化为科学计数法表示的浮点数（E 大写）|
-|%f、%F|转化为十进制浮点数|
-|%g|智能选择使用 %f 或 %e 格式|
-|%G|智能选择使用 %F 或 %E 格式|
-|%c|格式化字符及其 ASCII 码|
-|%r|使用 repr() 函数将表达式转换为字符串（什么字符都可输出）|
-|%s|使用 str() 函数将表达式转换为字符串|
-
-练习：判断是否为闰年
-</code></pre><p>year=int(input(‘请输入一个年份：’))<br>is_leap=(year%4==0 and year%100!=0 or year%400==0)<br>print(is_leap)</p>
-<p>```</p>
+<pre><code class="python">#使用input()函数获取键盘输入（字符串）
+#使用print（）函数输出带占位符的字符串
+a=int(input(&#39;a= &#39;))
+b=int(input(&#39;b= &#39;))
+print(&#39;%d+%d=%d&#39;%(a,b,a+b))
+print(&#39;%d//%d=%d&#39;%(a,b,a//b))
+print(&#39;%d%%%d=%d&#39;%(a,b,a%b))//注意
+print(&#39;%d**%d=%d&#39;%(a,b,a**b))</code></pre>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[] [:]</td>
+<td>下标，切片</td>
+</tr>
+<tr>
+<td>**</td>
+<td>指数</td>
+</tr>
+<tr>
+<td>~ + -</td>
+<td>按位取反, 正负号</td>
+</tr>
+<tr>
+<td>* / % //</td>
+<td>乘，除，模，整除</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>加，减</td>
+</tr>
+<tr>
+<td>&gt;&gt; &lt;&lt;</td>
+<td>右移，左移</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或，按位或</td>
+</tr>
+<tr>
+<td>&lt;= &lt; &gt; &gt;=</td>
+<td>小于等于，小于，大于，大于等于</td>
+</tr>
+<tr>
+<td>== !=</td>
+<td>等于，不等于</td>
+</tr>
+<tr>
+<td>is is not</td>
+<td>身份运算符</td>
+</tr>
+<tr>
+<td>in not in</td>
+<td></td>
+</tr>
+<tr>
+<td>not or and</td>
+<td>逻辑运算符</td>
+</tr>
+<tr>
+<td>= += -= <em>= /= %= //= *</em>= &amp;= `</td>
+<td>= ^= &gt;&gt;= &lt;&lt;=`</td>
+</tr>
+</tbody></table>
+<h3 id="python格式化字符串"><a href="#python格式化字符串" class="headerlink" title="python格式化字符串"></a>python格式化字符串</h3><table>
+<thead>
+<tr>
+<th>转换说明符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d、%i</td>
+<td>转换为带符号的十进制整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>转换为带符号的八进制整数</td>
+</tr>
+<tr>
+<td>%x、%X</td>
+<td>转换为带符号的十六进制整数</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>转化为科学计数法表示的浮点数（e 小写）</td>
+</tr>
+<tr>
+<td>%E</td>
+<td>转化为科学计数法表示的浮点数（E 大写）</td>
+</tr>
+<tr>
+<td>%f、%F</td>
+<td>转化为十进制浮点数</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>智能选择使用 %f 或 %e 格式</td>
+</tr>
+<tr>
+<td>%G</td>
+<td>智能选择使用 %F 或 %E 格式</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>格式化字符及其 ASCII 码</td>
+</tr>
+<tr>
+<td>%r</td>
+<td>使用 repr() 函数将表达式转换为字符串（什么字符都可输出）</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>使用 str() 函数将表达式转换为字符串</td>
+</tr>
+</tbody></table>
+<p>练习：判断是否为闰年</p>
+<pre><code class="python">year=int(input(&#39;请输入一个年份：&#39;))
+is_leap=(year%4==0 and year%100!=0 or year%400==0)
+print(is_leap)</code></pre>
 <p>附：这也是teacher Lin向我提问的第一个问题，结果我把第1，3个%写成了//，今天又重蹈覆辙。能否被整除要用取余运算符，看余数是否为0，而不是用取整运算符，带个整字，就老想翻你的牌子，因此为界以后涉及于此能想到这两次教训。</p>
 
     </article>
@@ -494,7 +586,7 @@ python内置函数对变量类型进行转换
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:02:29 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:26:16 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:33:58 pm</a>
             
         </div>
     
@@ -629,7 +721,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初学python"><span class="toc-number">1.</span> <span class="toc-text">初学python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言元素"><span class="toc-number">1.1.</span> <span class="toc-text">语言元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量和类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量和类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名"><span class="toc-number">1.1.2.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的使用"><span class="toc-number">1.1.3.</span> <span class="toc-text">变量的使用</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初学python"><span class="toc-number">1.</span> <span class="toc-text">初学python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言元素"><span class="toc-number">1.1.</span> <span class="toc-text">语言元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量和类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量和类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名"><span class="toc-number">1.1.2.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的使用"><span class="toc-number">1.1.3.</span> <span class="toc-text">变量的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-number">1.1.4.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python格式化字符串"><span class="toc-number">1.1.5.</span> <span class="toc-text">python格式化字符串</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
