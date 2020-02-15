@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>easy question types of ACM · fi3ework&#39;s Studio</title>
+    <title>python · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -219,7 +219,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">easy question types of ACM</a>
+                <a href="#" class="post-name">python</a>
             </div>
     </div>
     
@@ -249,7 +249,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            easy question types of ACM
+            python
             <!-- 404 -->
             
         </h1>
@@ -268,12 +268,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.5k</span>Reading time: <span class="post-count reading-time">7 min</span></span>
+                        <span>Word count: <span class="post-count word-count">844</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/27</span>
+                    <span class="post-intro-time">2020/02/15</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -397,273 +397,96 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="ACM题型"><a href="#ACM题型" class="headerlink" title="ACM题型"></a>ACM题型</h1><ul>
-<li>字符判断<br>思路：<br>1). 边输入，边判断<br>2). 全部输入后遍历判断</li>
+        <hr>
+<p>title:  notes of python<br>cate: imperfect<br>tag: python</p>
+<hr>
+<h1 id="初学python"><a href="#初学python" class="headerlink" title="初学python"></a>初学python</h1><p>（有C的基础）</p>
+<blockquote>
+<ol>
+<li>写出习题的代码，在 Linux 下用 gedit，OSX 下用 TextWrangler，Windows 下用 Notepad++。 2. 运行你写的习题。 3. 修改错误的地方。 4. 重复上述步骤。</li>
+</ol>
+</blockquote>
+<ul>
+<li>工具：Notepad++文本编译器</li>
+<li>PowerShell<br>##热身</li>
 </ul>
-<blockquote>
-<p>例题1：<br>TeX中的引号<br>在TeX中，左引号是“<code>”，右引号是“&#39;&#39;”。输入一篇包含双引号的文章，需要把他转换成TeX格式。 
-样例输入：
-&quot;To be or not to be,&quot; quoth the Bard, &quot;that is the question&quot;.
-样例输出：</code>To be or not to be, quoth the Bard,’’ ``that is the question’’.</p>
-</blockquote>
-<pre><code class="C">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;stdlib.h&gt;
-//char cha[1000];
-int main()
-{
-    int f=0,len=0,ok=1;
-    char c;
-    //scanf(&quot;%s&quot;,cha);
-    //gets(cha);
-    FILE *fp;
-    fp=fopen(&quot;fin.txt&quot;,&quot;r&quot;);
-    if(fp==NULL)
-    {
-        printf(&quot;error&quot;);
-        exit(1);
-    }
-    while(!feof(fp))
-    {
-        c=fgetc(fp);
-        if(c==&#39;&quot;&#39;)
-    {
-            printf(&quot;%s&quot;,ok?&quot;``&quot;:&quot;&#39;&#39;&quot;);//
-            ok=!ok;
-    }
+<ol>
+<li>使用terminal创建一个目录<br>&gt;输入mkdir命令创建一个新目录，如mkdir new_dir 创建一个名为new_dir的新目录</li>
+<li>使用terminal进入一个目录<br>一直cd<br>简单方法日后更</li>
+<li>使用键盘切换回到Terminal窗口<br>win+x</li>
+<li>列出文件夹中的内容<br>&gt;dir</li>
+</ol>
+<h2 id="语言元素"><a href="#语言元素" class="headerlink" title="语言元素"></a>语言元素</h2><h3 id="变量和类型"><a href="#变量和类型" class="headerlink" title="变量和类型"></a>变量和类型</h3><ul>
+<li>整型：python3.x中可以处理任意大小的整数</li>
+<li>浮点型</li>
+<li>字符型：由单引号或双引号括起来的任意文本<pre><code>    （原始字符串表示法，字节表示法，Uni             code表示以后了解）</code></pre></li>
+<li>布尔型：Ture False(首字符大写）</li>
+<li>复数型：高中学的复数一样，只做了解<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3></li>
+<li>硬性规则：与C一样</li>
+<li>PEP8要求：<pre><code>    1.用小写字母拼写，多个单词用下划线             连接
+    2.受保护的实例属性用单个下划线开头
+    3.私有的实例属性用两个下划线开头</code></pre><h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3>用实例看变量<pre><code>#使用type()来检测变量的类型
+a=100
+b=1.23
+c=1+5j
+d=&#39;hello world&#39;
+e=True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+</code></pre></li>
+</ul>
+<pre><code>python内置函数对变量类型进行转换
+- int()
+- float()
+- str()
+- chr（）
+- ord()</code></pre><p>#使用input()函数获取键盘输入（字符串）<br>#使用print（）函数输出带占位符的字符串<br>a=int(input(‘a= ‘))<br>b=int(input(‘b= ‘))<br>print(‘%d+%d=%d’%(a,b,a+b))<br>print(‘%d//%d=%d’%(a,b,a//b))<br>print(‘%d%%%d=%d’%(a,b,a%b))//注意<br>print(‘%d<strong>%d=%d’%(a,b,a</strong>b))</p>
+<pre><code>### 运算符
+|运算符|解释|
+|--|--|
+|[] [:]|下标，切片|
+|**|指数|
+|~ + -|按位取反, 正负号|
+| \* / % // |乘，除，模，整除
+| \+ -|加，减|
+| \&gt;&gt; &lt;&lt; |右移，左移|
+|&amp;|按位与|
+|^ |按位异或，按位或
+|&lt;= &lt; &gt; &gt;=|小于等于，小于，大于，大于等于
+|== !=|等于，不等于
+|is is not|身份运算符|
+|in not in||成员运算符|
+|not or and|逻辑运算符|
+|= += -= *= /= %= //= **= &amp;= `|= ^= &gt;&gt;= &lt;&lt;=`
 
-        else
-        printf(&quot;%c&quot;,c);
-    }
-    fclose(fp);
- }</code></pre>
-<blockquote>
-<p>例题2：<br>输入一个错位后敲出的字符串，输出本来的句子。输入合法，即一定是错位后的字符串。<br>样例输入：<br>o ;pbr vjoms<br>样例输出:<br>i love china</p>
-</blockquote>
-<hr>
-<p>思路：遍历</p>
-<pre><code class="C">#include&lt;stdio.h&gt;
-int main()
-{
-    char alter[]=&quot;`1234567890-=qwertyuiop[]\\asdfghjkl;&#39;zxcvbnm,./&quot;;
-    char c;
-    int i;
-    /*while((c=getchar())!=EOF)
-    {
-        for(i=1;alter[i];i++)
-        {
-            if(c==alter[i])
-            break;
-        }
-        if(alter[i])
-        putchar(alter[i-1]);
-        else
-        putchar(c); 
+### python格式化字符串
+|转换说明符|作用|
+|--|----|
+|%d、%i|转换为带符号的十进制整数|
+|%o|转换为带符号的八进制整数|
+|%x、%X|转换为带符号的十六进制整数|
+|%e|转化为科学计数法表示的浮点数（e 小写）|
+|%E|转化为科学计数法表示的浮点数（E 大写）|
+|%f、%F|转化为十进制浮点数|
+|%g|智能选择使用 %f 或 %e 格式|
+|%G|智能选择使用 %F 或 %E 格式|
+|%c|格式化字符及其 ASCII 码|
+|%r|使用 repr() 函数将表达式转换为字符串（什么字符都可输出）|
+|%s|使用 str() 函数将表达式转换为字符串|
 
-     } */
-    while((c=getchar())!=EOF)
-    {
-        for(i=1;alter[i]&amp;&amp;alter[i]!=c;i++);//找错位之后的字符在常量表中的位置 
+练习：判断是否为闰年</code></pre><p>year=int(input(‘请输入一个年份：’))<br>is_leap=(year%4==0 and year%100!=0 or year%400==0)<br>print(is_leap)</p>
+<p>```<br>附：这也是teacher Lin向我提问的第一个问题，结果我把第1，3个%写成了//，今天又重蹈覆辙。能否被整除要用取余运算符，看余数是否为0，而不是用取整运算符，带个整字，就老想翻你的牌子，因此为界以后涉及于此能想到这两次教训。</p>
 
-        if(alter[i])
-        putchar(alter[i-1]);
-        else
-        putchar(c);
-    }
-}</code></pre>
-<blockquote>
-<p>例题3：<br>回文字<br>输入一个字符串，判断他是否文回文串及镜像串,输入的数字不包含0.<br>样例输入：<br>NOTAPALINDROME<br>ISAPALINILAPASI<br>2A3MEAS<br>ATOYOTA<br>样例输出：<br>NOTAPALINDROME is not a palindrome or a mirrored.<br>ISAPALINILAPASI is a palindrome.<br>2A3MEAS is a mirrored string.<br>ATOYOTA is a mirrored palindrome.</p>
-</blockquote>
-<hr>
-<p>思路：字符数组的遍历</p>
-<pre><code class="C">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-#include&lt;ctype.h&gt;
-const char* rev=&quot;A   3  HIL JM O   2TUVWXY51SE Z  8 &quot;;//字符型指针，实际是一维字符数组
-const char* msg[]={&quot;not a palindrome or a mirrored&quot;,&quot;a palindrome&quot;,&quot;a mirrored string&quot;,&quot;a mirrored palindrome&quot;}; //指针数组，实际是二维字符数组
-char r(char c)
-{
-    if(isalpha(c))
-    return rev[c-&#39;A&#39;];
-    return rev[c-&#39;0&#39;+25];
-}
-int main()
-{
-    char s[100];
-    int i,len;
-    while(scanf(&quot;%s&quot;,s)!=EOF)
-    {
-        int p=1,m=1;
-        len=strlen(s);
-        for(i=0;i&lt;(len+1)/2;i++)//一半字符 
-        {
-            if(s[i]!=s[len-1-i]) p=0;    
-            if(r(s[i])!=s[len-1-i])m=0;
-        }
-        printf(&quot;%s is %s.\n&quot;,s,msg[p+m*2]);
-    }
-    return 0; 
- } </code></pre>
-<blockquote>
-<p>const它限定一个变量不允许被改变，产生静态作用。使用const在一定程度上可以提高程序的安全性和可靠性。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>例题3：字符查找<br>实现一个经典的猜数字游戏。给定答案序列和用户猜的序列，统计有多少数字位置正确（A），有多少数字在两个序列都出现过但位置不对（B).<br>样例输入：<br>4<br>1 3 5 5<br>1 1 2 3<br>4 3 3 5<br>6 5 5 1<br>6 1 3 5<br>1 3 5 5<br>0 0 0 0<br>10<br>1 2 2 2 4 5 6 6 6 9<br>1 2 3 4 5 6 7 8 9 1<br>1 1 2 2 3 3 4 4 5 5<br>1 2 1 3 1 5 1 6 1 9<br>1 2 2 5 5 5 6 6 6 7<br>0 0 0 0 0 0 0 0 0 0<br>0<br>样例输出：<br>Game 1:<br>(1,1)<br>(2,0)<br>(1,2)<br>(4,0)<br>Game 2:<br>(2,4)<br>(3,2)<br>(5,0)<br>(7,0)<br>思路：A可以直接算出，数字1到9各自在答案数组中出现的次数为c1,在猜测数组中出现的次数为c2，min(c1,c2)即给B做的贡献<br>技巧：1.循环语句的灵活运用lin64<br>      2.min如何写</p>
-</blockquote>
-<pre><code class="C">#include&lt;stdio.h&gt;
-#include&lt;string.h&gt;
-# define MAX 101
-/*int main()
-{
-    int b[MAX];
-    int a[MAX];
-    int t;  
-    while(scanf(&quot;%d&quot;,&amp;t)!=EOF&amp;&amp;t)
-    {
-        int i,f=0;
-        int j=0;
-
-        for(i=0;i&lt;t;i++)
-            scanf(&quot;%d&quot;,&amp;a[i]);
-        printf(&quot;Game %d:\n&quot;,++f);
-        for( ; ; ) 
-        {
-            int A=0,B=0,C=0;
-            for(i=0;i&lt;t;i++)
-            {
-                scanf(&quot;%d&quot;,&amp;b[i]);
-                if(b[i]==a[i])
-                A++;
-            }
-                if(b[0]==0)
-                break;//不能打破死循环 
-
-            for(i=0;i&lt;t;i++)//1 3 5 5 (答案）1 1 2 3 （猜测）题意了解错了 
-                for(j=0;j&lt;t;j++)
-                {
-                    if(b[j]==a[i])
-                    C++;
-                }
-                    printf(&quot;(%d,%d)\n&quot;,A,C-A);
-        }
-        //    printf(&quot;(%d,%d)\n&quot;,A,A-C);
-    }
-}    
-*/ 
-//我的思路是：借助一个for循环输入一个猜测数组，遇到0是跳出循环（不可实现，因为break只能跳出一层循环）,然后再用一个循环算A 
-// 然后用二层循环算C,则B=C-A； 
-int main()
-{
-int n;
-int a[MAX];
-int b[MAX];
-int kase=0;
-while(scanf(&quot;%d&quot;,&amp;n)!=EOF&amp;&amp;n)
-{    
-    printf(&quot;Game %d:\n&quot;,++kase);
-    int i,j,x;
-    for(i=0;i&lt;n;i++)
-    scanf(&quot;%d&quot;,&amp;a[i]);
-    while(1)
-    {
-        int A=0,B=0;
-        for(i=0;i&lt;n;i++)
-        {
-            scanf(&quot;%d&quot;,&amp;b[i]);
-            if(a[i]==b[i])
-            A++;
-        }
-        if(b[0]==0)
-        break;
-        for(j=1;j&lt;=9;j++)//计算数字1到9在答案序列和猜测序列中出现的次数 
-        {
-            int c1=0,c2=0;
-            for(x=0;x&lt;n;x++)
-                    {
-                        if(j==a[x])c1++;//计算J在答案数列中出现的次数
-                        if(j==b[x])c2++;//计算j在猜测序列中出现的次数 
-                     } 
-            if(c1&lt;c2)
-            B+=c1;
-            else
-            B+=c2;
-        }
-        printf(&quot;(%d,%d)\n&quot;,A,B-A);
-    }
-
-    }
- } </code></pre>
-<blockquote>
-<p>例题4：<br>oj平台<br>Sample Input<br>4<br>START<br>1 + 2 = 3<br>END<br>START<br>1+2=3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1 + 2 = 4<br>END<br>START<br>1 + 2 = 3<br>END<br>START<br>1    +    2    =    3<br>END<br>Sample Output<br>Presentation Error<br>Presentation Error<br>Wrong Answer<br>Presentation Error</p>
-</blockquote>
-<p>思路：ac直接判断即可，pe,wa时，需要取出其数据部分，进行对比<br>技巧：START+数据+END看成整体，即一个字符串</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-const int MAX=1000;
-char a1[MAX],a2[MAX];
-char b1[MAX],b2[MAX];
-char tmp[MAX];
- void input(char *a,char *b)
-    {
-      gets(tmp);
-      while(gets(tmp))
-      {
-          if(strcmp(tmp,&quot;END&quot;)==0)break;
-          strcat(a,tmp);
-          strcat(a,&quot;\0&quot;);
-
-      }
-      int t=0;
-      int len=strlen(a);
-      for(int i=0;i&lt;len;i++)
-      {
-          if(a[i]!=&#39; &#39;&amp;&amp;a[i]!=&#39;\t&#39;&amp;&amp;a[i]!=&#39;\n&#39;)
-          b[t++]=a[i];
-      }
-      b[t++]=&#39;\0&#39;;
-
-    }
-int main()
-{
-
-    int i;
-    int n;
-
-    cin&gt;&gt;n;
-    getchar();
-    while(n--)
-    {
-            a1[0]=&#39;\0&#39;;
-            a2[0]=&#39;\0&#39;;
-            input(a1,b1);
-            input(a2,b2);
-            if(strcmp(a1,a2)==0)
-            printf(&quot;Accepted\n&quot;);
-            else
-            {
-                 if(strcmp(b1,b2)==0)
-                printf(&quot;Presentation Error\n&quot;);
-                 else
-                {
-                 printf(&quot;Wrong Answer\n&quot;);
-                 }
-
-            }
-
-
-    }
-    system(&quot;pause&quot;);
-
-}</code></pre>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
-            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 27th 2020, 11:15:28 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/27/ACM%E9%A2%98%E5%9E%8B/">January 31st 2020, 7:38:34 pm</a>
+            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:02:29 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/02/15/python/">February 15th 2020, 7:07:46 pm</a>
             
         </div>
     
@@ -671,17 +494,12 @@ int main()
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/02/03/C++%E4%B9%8B%E7%B1%BB/" title= "C++类">
-                    <div class="nextTitle">C++类</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/01/26/warming/" title= "diary">
-                    <div class="prevTitle">diary</div>
+                <a href= "/2020/02/08/%E9%87%8D%E8%BD%BD%E6%9E%84%E9%80%A0/" title= "C++重载构造函数">
+                    <div class="prevTitle">C++重载构造函数</div>
                 </a>
             
         </li>
@@ -803,7 +621,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ACM题型"><span class="toc-number">1.</span> <span class="toc-text">ACM题型</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#初学python"><span class="toc-number">1.</span> <span class="toc-text">初学python</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#语言元素"><span class="toc-number">1.1.</span> <span class="toc-text">语言元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量和类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量和类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名"><span class="toc-number">1.1.2.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的使用"><span class="toc-number">1.1.3.</span> <span class="toc-text">变量的使用</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
