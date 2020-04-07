@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>过河卒 · fi3ework&#39;s Studio</title>
+    <title>向数字中有序插入数组 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -219,7 +219,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">过河卒</a>
+                <a href="#" class="post-name">向数字中有序插入数组</a>
             </div>
     </div>
     
@@ -249,7 +249,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            过河卒
+            向数字中有序插入数组
             <!-- 404 -->
             
         </h1>
@@ -266,14 +266,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">760</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">235</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/18</span>
+                    <span class="post-intro-time">2020/04/07</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -397,31 +403,14 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="过河卒"><a href="#过河卒" class="headerlink" title="过河卒"></a>过河卒</h1><ul>
-<li><p>动态规划（递推？）</p>
-</li>
-<li><p>递归</p>
-<p><del>人用迭代，神用递归</del></p>
-</li>
-</ul>
-<blockquote>
-<p>棋盘上A点有一个过河卒，需要走到目标B点。卒行走的规则：可以向下、或者向右。同时在棋盘上的某一点有一个对方的马（如C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点，如图3-1中的C点和P1，……，P8，卒不能通过对方马的控制点。棋盘用坐标表示，A点(0,0)、B点(n, m) (n,m为不超过20的整数),同样马的位置坐标是需要给出的，C≠A且C≠B。现在要求你计算出卒从A点能够到达B点的路径的条数。</p>
-</blockquote>
-
-<p>【输入】<br>给出n、m和C点的坐标。<br>【输出】<br>从A点能够到达B点的路径的条数。<br>【输入样例】<br>8 6 0 4<br>【输出样例】<br>1617</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"><span class="keyword">int</span> n,m,x,y;</span><br><span class="line"><span class="comment">//马有9个控制点 </span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">9</span>]=&#123;<span class="number">0</span>,<span class="number">-2</span>,<span class="number">-2</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>&#125;;<span class="comment">//控制行坐标</span></span><br><span class="line"><span class="keyword">int</span> b[<span class="number">9</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">-2</span>,<span class="number">2</span>,<span class="number">-2</span>,<span class="number">1</span>,<span class="number">-1</span>&#125;;<span class="comment">//控制纵坐标</span></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">21</span>][<span class="number">21</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> <span class="built_in">step</span>[<span class="number">21</span>][<span class="number">21</span>]=&#123;<span class="number">0</span>&#125;;<span class="comment">//step[i][j]表示到(i,J)点的控制数 </span></span><br><span class="line"><span class="keyword">int</span> i,j;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n,&amp;m,&amp;x,&amp;y);</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">21</span>;i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">21</span>;j++)</span><br><span class="line">		<span class="built_in">map</span>[i][j]=<span class="number">1</span>;<span class="comment">//标记地图，1表可走 </span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">9</span>;i++)</span><br><span class="line">	<span class="keyword">if</span>(x+a[i]&gt;=<span class="number">0</span>&amp;&amp;x+a[i]&lt;=n&amp;&amp;y+b[i]&gt;=<span class="number">0</span>&amp;&amp;y+b[i]&lt;=m)</span><br><span class="line">		<span class="built_in">map</span>[x+a[i]][y+b[i]]=<span class="number">0</span>;<span class="comment">//标记马的控制点，0表不可走</span></span><br><span class="line"><span class="comment">//第一行的控制数 </span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">21</span>;i++)</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">map</span>[<span class="number">0</span>][i])</span><br><span class="line">		<span class="built_in">step</span>[<span class="number">0</span>][i]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">break</span>;<span class="comment">//遇到马的控制点，停止遍历 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第一列控制数 </span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">21</span>;i++)</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">map</span>[i][<span class="number">0</span>])</span><br><span class="line">		<span class="built_in">step</span>[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line"><span class="comment">//从（1，1）点开始，用递推法，求点（i，j)的控制数</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">	<span class="built_in">step</span>[i][j]=<span class="built_in">step</span>[i<span class="number">-1</span>][j]*<span class="built_in">map</span>[i<span class="number">-1</span>][j]+<span class="built_in">step</span>[i][j<span class="number">-1</span>]*<span class="built_in">map</span>[i][j<span class="number">-1</span>];<span class="comment">//递推公式，如果map为0则该步不可走</span></span><br><span class="line">	</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld"</span>,<span class="built_in">step</span>[n][m]); 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>全局变量，全局数组默认值为0，局部为随机值</p>
-<hr>
-<h5 id="递推与递归的区别"><a href="#递推与递归的区别" class="headerlink" title="递推与递归的区别"></a>递推与递归的区别</h5><p>相对于递归算法,递推算法免除了数据进出栈的过程，也就是说,不需要函数不断的向边界值靠拢,而直接从边界出发,直到求出函数值</p>
-<p>比如阶乘函数：f(n)=n<em>f(n-1)<br>在f(3)的运算过程中,<br>递归的数据流动过程如下:<br>f(3){f(i)=f(i-1)</em>i}–&gt;f(2)–&gt;f(1)–&gt;f(0){f(0)=1}–&gt;f(1)–&gt;f(2)–f(3){f(3)=6}<br>而递推如下:<br>f(0)–&gt;f(1)–&gt;f(2)–&gt;f(3)<br>由此可见,递推的效率要高一些,在可能的情况下应尽量使用递推.但是递归作为比较基础的算法,它的作用不能忽视.所以,在把握这两种算法的时候应该特别注意。</p>
-
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu_node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span>  num;</span><br><span class="line">	<span class="keyword">float</span> score;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stu_node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">struct stu_node *<span class="title">creat</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	stu_node *p1=<span class="literal">NULL</span>,*p2=<span class="literal">NULL</span>,*head=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span>  n;</span><br><span class="line">	<span class="keyword">float</span> s;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;"请输入学号和成绩：(遇到0结束)"&lt;&lt;endl;</span></span><br><span class="line">	<span class="comment">//cin&gt;&gt;n&gt;&gt;s;</span></span><br><span class="line">	ifstream in;</span><br><span class="line">	ofstream out;</span><br><span class="line">	in.<span class="built_in">open</span>(<span class="string">"lianbiao.txt"</span>);</span><br><span class="line">	in&gt;&gt;n&gt;&gt;s;<span class="comment">//in,cout对象就是文件对象，处理的是文件和内存的关系。 </span></span><br><span class="line">	<span class="keyword">while</span>(s!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> c;</span><br><span class="line">		p1=(struct stu_node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct stu_node));</span><br><span class="line">		p1-&gt;num=n;</span><br><span class="line">		p1-&gt;score=s;</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">NULL</span>)head=p1;</span><br><span class="line">		<span class="keyword">else</span> p2-&gt;next=p1;</span><br><span class="line">		p2=p1;</span><br><span class="line">		in&gt;&gt;n&gt;&gt;s;</span><br><span class="line">	 &#125; </span><br><span class="line">	 p2-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	 in.<span class="built_in">close</span>();</span><br><span class="line">	 <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">list</span> <span class="params">(struct stu_node *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stu_node</span> *<span class="title">p</span>;</span></span><br><span class="line">	<span class="keyword">if</span>(head==<span class="literal">NULL</span>)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"链表为空"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"链表内容为下："</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		p=head;</span><br><span class="line">		<span class="keyword">while</span>(p!=<span class="literal">NULL</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;p-&gt;num&lt;&lt;<span class="string">" "</span>&lt;&lt;p-&gt;score&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		 </span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		 &#125; </span><br><span class="line">	 &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stu_node</span> *<span class="title">head</span>;</span></span><br><span class="line">	head=creat();</span><br><span class="line">	<span class="built_in">list</span>(head);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
-            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 4:19:11 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/01/18/bolg2/">January 18th 2020, 7:28:08 pm</a>
+            <p>发表日期：<a href="https://susan514-ywx.github.io/2020/04/07/C++%E4%B8%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E6%B7%B7%E7%94%A8/">April 7th 2020, 4:58:05 pm</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/04/07/C++%E4%B8%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E6%B7%B7%E7%94%A8/">April 7th 2020, 5:13:25 pm</a>
             
         </div>
     
@@ -429,17 +418,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/01/19/blog3/" title= "HTML">
-                    <div class="nextTitle">HTML</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/01/13/firstblog/" title= "firstblog">
-                    <div class="prevTitle">firstblog</div>
+                <a href= "/2020/03/14/%E5%90%91%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E6%8F%92%E5%85%A5/" title= "向数字中有序插入数组">
+                    <div class="prevTitle">向数字中有序插入数组</div>
                 </a>
             
         </li>
@@ -561,7 +545,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#过河卒"><span class="toc-number">1.</span> <span class="toc-text">过河卒</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#递推与递归的区别"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">递推与递归的区别</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
