@@ -268,7 +268,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">339</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">345</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -397,8 +397,59 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h1><p>类型|类型说明|字节数|数值范围<br>|–|–|–|–|<br>|短整型|short|2|-32768<del>32767<br>|基本整形|int|4|-2147483648</del>2147483647<br>|长整型|long|4|-2147483648<del>2147483647<br>|无符号短整型|unsigned short|2|0</del>65535<br>|无符号整形|unsigned|4|0<del>429497295<br>|无符号长整型|unsigned|4|0</del>429497295</p>
-<h1 id="数据自动转化规则"><a href="#数据自动转化规则" class="headerlink" title="数据自动转化规则"></a>数据自动转化规则</h1><blockquote>
+        <h1 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>类型说明</th>
+<th>字节数</th>
+<th>数值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>短整型</td>
+<td>short</td>
+<td>2</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>基本整形</td>
+<td>int</td>
+<td>4</td>
+<td>-2147483648~2147483647</td>
+</tr>
+<tr>
+<td>长整型</td>
+<td>long</td>
+<td>4</td>
+<td>-2147483648~2147483647</td>
+</tr>
+<tr>
+<td>无符号短整型</td>
+<td>unsigned short</td>
+<td>2</td>
+<td>0~65535</td>
+</tr>
+<tr>
+<td>无符号整形</td>
+<td>unsigned</td>
+<td>4</td>
+<td>0~429497295</td>
+</tr>
+<tr>
+<td>无符号长整型</td>
+<td>unsigned</td>
+<td>4</td>
+<td>0~429497295</td>
+</tr>
+<tr>
+<td># 数据自动转化规则</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
 <p>①若参与运算量的类型不同，则先转换成同一类型，然后进行运算<br/><br>②转换按数据长度增加的方向进行，以保证精度不降低。如int型和long型运算时，先把int量转成long型后再进行运算<br>    a、若两种类型的字节数不同，转换成字节数高的类型<br>    b、若两种类型的字节数相同，且一种有符号，一种无符号，则转换成无符号类型<br/><br>③所有的浮点运算都是以双精度进行的，即使是两个float单精度量运算的表达式，也要先转换成double型，再作运算.<br/><br>④char型和short型参与运算时，必须先转换成int型<br/><br>⑤在赋值运算中，赋值号两边量的数据类型不同时，赋值号右边量的类型将转换为左边量的类型。如果右边量的数据类型长度左边长时，将丢失一部分数据，这样会降低精度，丢失的部分按四舍五入向前舍入</p>
 </blockquote>
 
@@ -408,7 +459,7 @@ height:50vh;
         <div class="license-wrapper">
             <p>Author：<a href="https://susan514-ywx.github.io">Susan</a>
             <p>发表日期：<a href="https://susan514-ywx.github.io/2020/03/04/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/">March 4th 2020, 6:02:49 pm</a>
-            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/03/04/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/">March 8th 2020, 9:27:21 am</a>
+            <p>更新日期：<a href="https://susan514-ywx.github.io/2020/03/04/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/">April 10th 2020, 9:28:54 pm</a>
             
         </div>
     
@@ -548,7 +599,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#整数类型"><span class="toc-number">1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据自动转化规则"><span class="toc-number">2.</span> <span class="toc-text">数据自动转化规则</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#整数类型"><span class="toc-number">1.</span> <span class="toc-text">整数类型</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -944,7 +995,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/07/C++%E4%B8%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E6%B7%B7%E7%94%A8/" >向数字中有序插入数组</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/04/07/C++%E4%B8%8E%E9%93%BE%E8%A1%A8%E7%9A%84%E6%B7%B7%E7%94%A8/" >简单链表</a>
         </li>
     
     </div>
